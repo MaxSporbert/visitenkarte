@@ -1,0 +1,10 @@
+BEGIN:VCARD
+VERSION:3.0
+FN:Maximilian Sporbert
+N:Sporbert;Maximilian;;;
+ORG:Betreuungsbüro
+TITLE:Rechtliche Betreuung und Verfahrenspflegschaften
+EMAIL;TYPE=WORK:kontakt@buero-betreuung.de
+ADR;TYPE=WORK:;;Dietendorf 7;Wetterzeube;;06722;Deutschland
+URL:https://kontakt.buero-betreuung.de
+END:VCARD
