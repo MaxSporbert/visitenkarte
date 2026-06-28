@@ -227,6 +227,13 @@ a {
   line-height: 1.75;
 }
 
+.authority-address {
+  color: var(--muted);
+  font-size: 14px;
+  font-style: normal;
+  line-height: 1.75;
+}
+
 .text-link {
   display: inline-block;
   margin-top: 22px;
