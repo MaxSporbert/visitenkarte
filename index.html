@@ -1,0 +1,669 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Maximilian Sporbert | Betreuungsbüro</title>
+
+  <meta name="description" content="Digitale Kontaktseite von Maximilian Sporbert. Betreuungsbüro für rechtliche Betreuung und Verfahrenspflegschaften.">
+  <meta name="theme-color" content="#12110f">
+
+  <style>
+    :root {
+      --ink: #12110f;
+      --ink-soft: #34302a;
+      --muted: #756f65;
+      --paper: #f5efe3;
+      --paper-light: #fffaf1;
+      --line: rgba(18, 17, 15, .13);
+      --line-strong: rgba(18, 17, 15, .22);
+      --gold: #a9813a;
+      --gold-soft: rgba(169, 129, 58, .14);
+      --shadow: 0 40px 110px rgba(38, 29, 14, .22);
+
+      --green: #236d43;
+      --amber: #9b6514;
+      --grey: #74706a;
+
+      --sans: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
+      --serif: ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      min-height: 100%;
+      background: var(--paper);
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      color: var(--ink);
+      font-family: var(--sans);
+      background:
+        radial-gradient(circle at 12% 8%, rgba(255, 250, 241, .98), transparent 30%),
+        radial-gradient(circle at 88% 96%, rgba(169, 129, 58, .17), transparent 32%),
+        linear-gradient(135deg, #f8f1e4 0%, #eadfcb 48%, #f7efe1 100%);
+      display: grid;
+      place-items: center;
+      padding: 26px;
+      overflow-x: hidden;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      opacity: .22;
+      background-image:
+        linear-gradient(rgba(18,17,15,.035) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(18,17,15,.028) 1px, transparent 1px);
+      background-size: 56px 56px;
+      mask-image: radial-gradient(circle at center, black, transparent 74%);
+    }
+
+    a {
+      color: inherit;
+    }
+
+    .stage {
+      width: min(1120px, 100%);
+      position: relative;
+    }
+
+    .card {
+      position: relative;
+      isolation: isolate;
+      overflow: hidden;
+      min-height: 700px;
+      display: grid;
+      grid-template-columns: 1.1fr .9fr;
+      border-radius: 40px;
+      background:
+        linear-gradient(115deg, rgba(255,250,241,.94), rgba(255,250,241,.76)),
+        var(--paper-light);
+      border: 1px solid rgba(255,255,255,.72);
+      box-shadow: var(--shadow);
+    }
+
+    .card::before {
+      content: "";
+      position: absolute;
+      inset: 18px;
+      border: 1px solid rgba(18,17,15,.105);
+      border-radius: 28px;
+      z-index: 1;
+      pointer-events: none;
+    }
+
+    .left,
+    .right {
+      position: relative;
+      z-index: 2;
+    }
+
+    .left {
+      padding: 58px 58px 52px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      border-right: 1px solid var(--line);
+      background:
+        linear-gradient(150deg, rgba(255,250,241,.74), rgba(255,250,241,.26));
+    }
+
+    .right {
+      padding: 58px 58px 52px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      background:
+        linear-gradient(180deg, rgba(255,255,255,.14), rgba(169,129,58,.045));
+    }
+
+    .brand {
+      margin-bottom: 86px;
+    }
+
+    .brand-label {
+      margin: 0;
+      width: fit-content;
+      padding-bottom: 14px;
+      border-bottom: 1px solid var(--gold);
+      font-size: 12px;
+      line-height: 1;
+      font-weight: 780;
+      letter-spacing: .24em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+
+    .identity {
+      max-width: 690px;
+    }
+
+    .name {
+      margin: 0;
+      font-family: var(--serif);
+      font-weight: 500;
+      font-size: clamp(64px, 8.2vw, 122px);
+      line-height: .8;
+      letter-spacing: -.095em;
+      color: var(--ink);
+    }
+
+    .name span {
+      display: block;
+      width: fit-content;
+      transform-origin: left center;
+    }
+
+    .name .first {
+      transform: scaleX(.91);
+    }
+
+    .name .last {
+      margin-top: .045em;
+      transform: scaleX(1.02);
+    }
+
+    .expertise {
+      margin-top: 44px;
+      padding-top: 24px;
+      max-width: 560px;
+      border-top: 1px solid var(--line-strong);
+      display: grid;
+      gap: 8px;
+    }
+
+    .expertise p {
+      margin: 0;
+      font-family: var(--serif);
+      font-size: clamp(24px, 2.5vw, 34px);
+      line-height: 1.02;
+      letter-spacing: -.055em;
+      color: var(--ink-soft);
+    }
+
+    .expertise p + p {
+      color: var(--muted);
+    }
+
+    .availability {
+      width: fit-content;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      margin-top: 34px;
+      padding: 10px 14px;
+      border-radius: 999px;
+      border: 1px solid rgba(18,17,15,.12);
+      background: rgba(255,250,241,.68);
+      color: var(--muted);
+      font-size: 13px;
+      font-weight: 650;
+      letter-spacing: -.01em;
+    }
+
+    .dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--grey);
+      box-shadow: 0 0 0 4px rgba(116,112,106,.15);
+      flex: 0 0 auto;
+    }
+
+    .left-footer {
+      margin: 0;
+      max-width: 430px;
+      font-size: 13px;
+      line-height: 1.65;
+      color: var(--muted);
+    }
+
+    .contact-head {
+      display: grid;
+      gap: 18px;
+      margin-bottom: 34px;
+    }
+
+    .contact-kicker {
+      margin: 0;
+      font-size: 12px;
+      font-weight: 850;
+      letter-spacing: .22em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+
+    .contact-title {
+      margin: 0;
+      font-family: var(--serif);
+      font-size: clamp(34px, 3.8vw, 52px);
+      line-height: .95;
+      letter-spacing: -.065em;
+      font-weight: 500;
+      color: var(--ink);
+    }
+
+    .contact-subtitle {
+      margin: 0;
+      max-width: 370px;
+      font-size: 14px;
+      line-height: 1.65;
+      color: var(--muted);
+    }
+
+    .actions {
+      display: grid;
+      gap: 12px;
+    }
+
+    .action {
+      position: relative;
+      min-height: 82px;
+      display: grid;
+      grid-template-columns: 52px 1fr auto;
+      align-items: center;
+      gap: 16px;
+      padding: 15px 18px;
+      border-radius: 24px;
+      border: 1px solid var(--line);
+      background: rgba(255,250,241,.68);
+      text-decoration: none;
+      overflow: hidden;
+      transition:
+        transform .18s ease,
+        border-color .18s ease,
+        box-shadow .18s ease,
+        background .18s ease;
+    }
+
+    .action::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(90deg, rgba(169,129,58,.10), transparent 58%);
+      opacity: 0;
+      transition: opacity .18s ease;
+    }
+
+    .action:hover {
+      transform: translateY(-3px);
+      border-color: rgba(169,129,58,.42);
+      background: rgba(255,250,241,.94);
+      box-shadow: 0 20px 44px rgba(38,29,14,.12);
+    }
+
+    .action:hover::before {
+      opacity: 1;
+    }
+
+    .action.primary {
+      background: var(--ink);
+      color: var(--paper-light);
+      border-color: var(--ink);
+      box-shadow: 0 24px 54px rgba(18,17,15,.18);
+    }
+
+    .action.primary::before {
+      background: linear-gradient(100deg, rgba(255,255,255,.13), transparent 62%);
+      opacity: 1;
+    }
+
+    .icon {
+      position: relative;
+      z-index: 1;
+      width: 52px;
+      height: 52px;
+      border-radius: 18px;
+      display: grid;
+      place-items: center;
+      background: var(--gold-soft);
+      color: var(--ink);
+      font-weight: 800;
+      font-size: 18px;
+    }
+
+    .primary .icon {
+      background: rgba(255,255,255,.12);
+      color: var(--paper-light);
+    }
+
+    .action-copy {
+      position: relative;
+      z-index: 1;
+      min-width: 0;
+    }
+
+    .action-label {
+      display: block;
+      font-size: 15px;
+      font-weight: 800;
+      letter-spacing: -.02em;
+    }
+
+    .action-value {
+      display: block;
+      margin-top: 5px;
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.35;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      max-width: 320px;
+    }
+
+    .primary .action-value,
+    .primary .arrow {
+      color: rgba(255,250,241,.68);
+    }
+
+    .arrow {
+      position: relative;
+      z-index: 1;
+      color: var(--muted);
+      font-size: 19px;
+    }
+
+    .address {
+      margin-top: 36px;
+      padding-top: 28px;
+      border-top: 1px solid var(--line);
+      display: grid;
+      gap: 5px;
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.45;
+    }
+
+    .address strong {
+      color: var(--ink);
+      font-size: 14px;
+    }
+
+    .footer {
+      display: flex;
+      justify-content: space-between;
+      gap: 24px;
+      color: var(--muted);
+      font-size: 12px;
+      line-height: 1.45;
+      padding-top: 38px;
+    }
+
+    @media (max-width: 930px) {
+      body {
+        place-items: start center;
+      }
+
+      .card {
+        grid-template-columns: 1fr;
+        min-height: auto;
+      }
+
+      .left {
+        border-right: 0;
+        border-bottom: 1px solid var(--line);
+      }
+
+      .right {
+        padding-top: 44px;
+      }
+
+      .name {
+        font-size: clamp(64px, 14vw, 112px);
+      }
+
+      .contact-title {
+        max-width: 560px;
+      }
+    }
+
+    @media (max-width: 620px) {
+      body {
+        padding: 12px;
+      }
+
+      .card {
+        border-radius: 30px;
+      }
+
+      .card::before {
+        inset: 10px;
+        border-radius: 22px;
+      }
+
+      .left,
+      .right {
+        padding: 32px 24px 28px;
+      }
+
+      .brand {
+        margin-bottom: 50px;
+      }
+
+      .name {
+        font-size: clamp(58px, 16vw, 86px);
+      }
+
+      .expertise {
+        margin-top: 34px;
+        padding-top: 20px;
+      }
+
+      .expertise p {
+        font-size: 25px;
+      }
+
+      .availability {
+        margin-top: 28px;
+        max-width: 100%;
+        font-size: 12px;
+      }
+
+      .left-footer {
+        margin-top: 44px;
+      }
+
+      .contact-title {
+        font-size: 39px;
+      }
+
+      .action {
+        min-height: 78px;
+        grid-template-columns: 48px 1fr auto;
+        gap: 13px;
+        padding: 14px;
+        border-radius: 22px;
+      }
+
+      .icon {
+        width: 48px;
+        height: 48px;
+        border-radius: 17px;
+      }
+
+      .action-value {
+        max-width: 210px;
+      }
+
+      .footer {
+        display: grid;
+        gap: 8px;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *,
+      *::before,
+      *::after {
+        scroll-behavior: auto !important;
+        transition: none !important;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <main class="stage">
+    <section class="card" aria-label="Digitale Visitenkarte von Maximilian Sporbert">
+      <div class="left">
+        <div>
+          <header class="brand">
+            <p class="brand-label">Betreuungsbüro</p>
+          </header>
+
+          <section class="identity" aria-label="Profil">
+            <h1 class="name">
+              <span class="first">Maximilian</span>
+              <span class="last">Sporbert</span>
+            </h1>
+
+            <div class="expertise" aria-label="Tätigkeitsbereiche">
+              <p>Rechtliche Betreuung</p>
+              <p>Verfahrenspflegschaften</p>
+            </div>
+
+            <div class="availability" id="availability" aria-live="polite">
+              <span class="dot" id="availabilityDot"></span>
+              <span id="availabilityText">Telefonische Erreichbarkeit wird geprüft</span>
+            </div>
+          </section>
+        </div>
+
+        <p class="left-footer">
+          Digitale Kontaktkarte mit aktuellen Kontaktdaten und direkter Speicherung im Adressbuch.
+        </p>
+      </div>
+
+      <div class="right">
+        <div>
+          <section class="contact-head" aria-label="Kontaktbereich">
+            <p class="contact-kicker">Kontaktaufnahme</p>
+            <h2 class="contact-title">Kontakt</h2>
+            <p class="contact-subtitle">
+              E-Mail, Anschrift und digitale Kontaktkarte.
+            </p>
+          </section>
+
+          <nav class="actions" aria-label="Kontaktoptionen">
+            <a class="action primary" href="kontakt.vcf">
+              <span class="icon">+</span>
+              <span class="action-copy">
+                <span class="action-label">Kontakt speichern</span>
+                <span class="action-value">Digitale Kontaktkarte übernehmen</span>
+              </span>
+              <span class="arrow">↗</span>
+            </a>
+
+            <a class="action" href="mailto:kontakt@buero-betreuung.de">
+              <span class="icon">@</span>
+              <span class="action-copy">
+                <span class="action-label">E-Mail</span>
+                <span class="action-value">kontakt@buero-betreuung.de</span>
+              </span>
+              <span class="arrow">↗</span>
+            </a>
+
+            <a class="action" href="https://www.google.com/maps/search/?api=1&query=Dietendorf%207%2C%2006722%20Wetterzeube">
+              <span class="icon">⌖</span>
+              <span class="action-copy">
+                <span class="action-label">Anschrift</span>
+                <span class="action-value">Dietendorf 7, 06722 Wetterzeube</span>
+              </span>
+              <span class="arrow">↗</span>
+            </a>
+          </nav>
+
+          <section class="address" aria-label="Anschrift">
+            <strong>Maximilian Sporbert</strong>
+            <span>Dietendorf 7</span>
+            <span>06722 Wetterzeube</span>
+            <span>kontakt@buero-betreuung.de</span>
+          </section>
+        </div>
+
+        <footer class="footer">
+          <span>buero-betreuung.de</span>
+          <span>Telefonisch Mo–Fr 10:00–12:00 Uhr</span>
+        </footer>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    function updateAvailability() {
+      const now = new Date();
+
+      const berlinTime = new Date(
+        now.toLocaleString("en-US", { timeZone: "Europe/Berlin" })
+      );
+
+      const day = berlinTime.getDay();
+      const hour = berlinTime.getHours();
+      const minute = berlinTime.getMinutes();
+      const currentMinutes = hour * 60 + minute;
+
+      const start = 10 * 60;
+      const end = 12 * 60;
+
+      const isWeekday = day >= 1 && day <= 5;
+      const isAvailable = isWeekday && currentMinutes >= start && currentMinutes < end;
+
+      const text = document.getElementById("availabilityText");
+      const dot = document.getElementById("availabilityDot");
+      const status = document.getElementById("availability");
+
+      if (!text || !dot || !status) return;
+
+      let message;
+      let color;
+      let glow;
+      let background;
+      let border;
+
+      if (isAvailable) {
+        message = "Telefonisch erreichbar";
+        color = "#236d43";
+        glow = "rgba(35, 109, 67, .16)";
+        background = "rgba(237, 248, 241, .74)";
+        border = "rgba(35, 109, 67, .24)";
+      } else if (isWeekday && currentMinutes < start) {
+        message = "Telefonisch ab 10:00 Uhr erreichbar";
+        color = "#9b6514";
+        glow = "rgba(155, 101, 20, .16)";
+        background = "rgba(255, 246, 229, .76)";
+        border = "rgba(155, 101, 20, .24)";
+      } else if (isWeekday && currentMinutes >= end) {
+        message = "Telefonisch heute nicht mehr erreichbar";
+        color = "#74706a";
+        glow = "rgba(116, 112, 106, .15)";
+        background = "rgba(245, 242, 236, .76)";
+        border = "rgba(116, 112, 106, .20)";
+      } else {
+        message = "Telefonisch Mo-Fr 10:00-12:00 Uhr";
+        color = "#74706a";
+        glow = "rgba(116, 112, 106, .15)";
+        background = "rgba(245, 242, 236, .76)";
+        border = "rgba(116, 112, 106, .20)";
+      }
+
+      text.textContent = message;
+      dot.style.background = color;
+      dot.style.boxShadow = "0 0 0 4px " + glow;
+      status.style.background = background;
+      status.style.borderColor = border;
+    }
+
+    updateAvailability();
+    setInterval(updateAvailability, 60000);
+  </script>
+</body>
+</html>
