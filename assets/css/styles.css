@@ -230,6 +230,101 @@ a {
   margin-top: 56px;
 }
 
+.editorial-content {
+  margin-top: 64px;
+}
+
+.editorial-overview {
+  display: grid;
+  grid-template-columns: minmax(0, 1.35fr) minmax(260px, .75fr);
+  gap: clamp(36px, 6vw, 72px);
+  align-items: start;
+}
+
+.editorial-main {
+  padding-top: 4px;
+}
+
+.editorial-main p {
+  margin: 0;
+  color: var(--ink-soft);
+  font-family: var(--serif);
+  font-size: 19px;
+  letter-spacing: -.015em;
+  line-height: 1.55;
+}
+
+.summary-box {
+  padding: 26px 28px;
+  border: 1px solid var(--line);
+  background: rgba(255, 250, 241, .42);
+}
+
+.summary-box h2 {
+  margin: 0 0 18px;
+  font-family: var(--serif);
+  font-size: 22px;
+  font-weight: 500;
+  letter-spacing: -.025em;
+}
+
+.summary-box ul {
+  margin: 0;
+  padding-left: 18px;
+}
+
+.summary-box li {
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+.summary-box li + li {
+  margin-top: 11px;
+}
+
+.summary-box li::marker {
+  color: var(--gold);
+}
+
+.editorial-sections {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+  margin-top: 58px;
+}
+
+.editorial-section {
+  padding: 30px;
+  border: 1px solid var(--line);
+  background: rgba(255, 250, 241, .25);
+}
+
+.editorial-section-wide {
+  grid-column: 1 / -1;
+}
+
+.editorial-section h2 {
+  margin: 0 0 16px;
+  padding-bottom: 14px;
+  border-bottom: 1px solid var(--line);
+  font-family: var(--serif);
+  font-size: 27px;
+  font-weight: 500;
+  letter-spacing: -.035em;
+}
+
+.editorial-section p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.75;
+}
+
+.editorial-section p + p {
+  margin-top: 16px;
+}
+
 .content-section h2 {
   margin: 0 0 14px;
   font-family: var(--serif);
@@ -735,6 +830,10 @@ a {
     grid-row: auto;
   }
 
+  .editorial-overview {
+    grid-template-columns: 1fr;
+  }
+
   .contact-address {
     grid-column: auto;
     margin-top: 0;
@@ -859,6 +958,40 @@ a {
 
   .service-content {
     margin-top: 44px;
+  }
+
+  .editorial-content {
+    margin-top: 44px;
+  }
+
+  .editorial-overview {
+    gap: 30px;
+  }
+
+  .editorial-main p {
+    font-size: 18px;
+  }
+
+  .summary-box {
+    padding: 22px;
+  }
+
+  .editorial-sections {
+    grid-template-columns: 1fr;
+    gap: 14px;
+    margin-top: 42px;
+  }
+
+  .editorial-section {
+    padding: 24px 22px;
+  }
+
+  .editorial-section-wide {
+    grid-column: auto;
+  }
+
+  .editorial-section h2 {
+    font-size: 25px;
   }
 
   .service-intro {
