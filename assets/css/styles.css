@@ -212,6 +212,24 @@ a {
   margin-top: 76px;
 }
 
+.service-content {
+  max-width: 680px;
+  margin-top: 64px;
+}
+
+.service-intro {
+  margin: 0;
+  color: var(--ink-soft);
+  font-family: var(--serif);
+  font-size: 19px;
+  letter-spacing: -.015em;
+  line-height: 1.5;
+}
+
+.service-content .content-section {
+  margin-top: 56px;
+}
+
 .content-section h2 {
   margin: 0 0 14px;
   font-family: var(--serif);
@@ -225,6 +243,10 @@ a {
   color: var(--muted);
   font-size: 14px;
   line-height: 1.75;
+}
+
+.content-section p + p {
+  margin-top: 16px;
 }
 
 .authority-address {
@@ -853,6 +875,18 @@ a {
 
   .content-section {
     margin-top: 52px;
+  }
+
+  .service-content {
+    margin-top: 44px;
+  }
+
+  .service-intro {
+    font-size: 18px;
+  }
+
+  .service-content .content-section {
+    margin-top: 44px;
   }
 
   .content-section h2 {
