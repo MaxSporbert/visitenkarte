@@ -126,6 +126,14 @@ a {
   color: var(--ink);
 }
 
+.site-brand:focus-visible,
+.site-nav a:focus-visible,
+.site-footer a:focus-visible,
+.text-link:focus-visible {
+  outline: 2px solid var(--gold);
+  outline-offset: 3px;
+}
+
 .site-footer {
   display: flex;
   justify-content: space-between;
@@ -181,8 +189,10 @@ a {
   font-family: var(--serif);
   font-size: clamp(48px, 7vw, 88px);
   font-weight: 500;
+  hyphens: auto;
   letter-spacing: -.07em;
   line-height: .93;
+  overflow-wrap: break-word;
 }
 
 .page-lead {
@@ -649,15 +659,9 @@ a {
 
   .site-nav {
     width: 100%;
+    flex-wrap: wrap;
     justify-content: flex-start;
-    gap: 18px;
-    overflow-x: auto;
-    padding-bottom: 4px;
-    scrollbar-width: none;
-  }
-
-  .site-nav::-webkit-scrollbar {
-    display: none;
+    gap: 8px 18px;
   }
 
   .site-footer {
