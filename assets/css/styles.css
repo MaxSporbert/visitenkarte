@@ -361,19 +361,6 @@ a {
   break-inside: avoid;
 }
 
-.legal-content .seal {
-  margin-top: 58px;
-  padding-top: 22px;
-  border-top: 1px solid var(--line);
-  color: var(--muted);
-  font-size: 12px;
-}
-
-.legal-content .dsg-license-content-blurred {
-  background: rgba(155, 101, 20, .10);
-  color: var(--amber);
-}
-
 .card {
   position: relative;
   isolation: isolate;
