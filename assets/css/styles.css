@@ -526,14 +526,6 @@ a {
   flex: 0 0 auto;
 }
 
-.left-footer {
-  margin: 0;
-  max-width: 430px;
-  font-size: 13px;
-  line-height: 1.6;
-  color: var(--muted);
-}
-
 .contact-head {
   display: grid;
   gap: 15px;
@@ -698,7 +690,7 @@ a {
 
 .footer {
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-start;
   gap: 24px;
   color: var(--muted);
   font-size: 12px;
@@ -812,10 +804,6 @@ a {
     margin-top: 24px;
     max-width: 100%;
     font-size: 12px;
-  }
-
-  .left-footer {
-    margin-top: 40px;
   }
 
   .contact-title {
