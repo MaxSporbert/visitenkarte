@@ -34,20 +34,8 @@ function updateAvailability() {
     glow = "rgba(35, 109, 67, .16)";
     background = "rgba(237, 248, 241, .74)";
     border = "rgba(35, 109, 67, .24)";
-  } else if (isWeekday && currentMinutes < start) {
-    message = "Telefonisch ab 10:00 Uhr erreichbar";
-    color = "#9b6514";
-    glow = "rgba(155, 101, 20, .16)";
-    background = "rgba(255, 246, 229, .76)";
-    border = "rgba(155, 101, 20, .24)";
-  } else if (isWeekday && currentMinutes >= end) {
-    message = "Telefonisch heute nicht mehr erreichbar";
-    color = "#74706a";
-    glow = "rgba(116, 112, 106, .15)";
-    background = "rgba(245, 242, 236, .76)";
-    border = "rgba(116, 112, 106, .20)";
   } else {
-    message = "Telefonisch Mo-Fr 10:00-12:00 Uhr";
+    message = "Telefonische Sprechzeit: Mo–Fr 10:00–12:00 Uhr";
     color = "#74706a";
     glow = "rgba(116, 112, 106, .15)";
     background = "rgba(245, 242, 236, .76)";
