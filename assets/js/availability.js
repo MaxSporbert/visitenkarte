@@ -16,12 +16,6 @@ function updateAvailability() {
   const isWeekday = day >= 1 && day <= 5;
   const isAvailable = isWeekday && currentMinutes >= start && currentMinutes < end;
 
-  const text = document.getElementById("availabilityText");
-  const dot = document.getElementById("availabilityDot");
-  const status = document.getElementById("availability");
-
-  if (!text || !dot || !status) return;
-
   let message;
   let color;
   let glow;
@@ -42,11 +36,20 @@ function updateAvailability() {
     border = "rgba(116, 112, 106, .20)";
   }
 
-  text.textContent = message;
-  dot.style.background = color;
-  dot.style.boxShadow = "0 0 0 4px " + glow;
-  status.style.background = background;
-  status.style.borderColor = border;
+  const badges = document.querySelectorAll("[data-availability-badge]");
+
+  badges.forEach((status) => {
+    const text = status.querySelector("[data-availability-text]");
+    const dot = status.querySelector("[data-availability-dot]");
+
+    if (!text || !dot) return;
+
+    text.textContent = message;
+    dot.style.background = color;
+    dot.style.boxShadow = "0 0 0 4px " + glow;
+    status.style.background = background;
+    status.style.borderColor = border;
+  });
 }
 
 updateAvailability();

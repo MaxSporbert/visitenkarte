@@ -71,14 +71,36 @@
             <a class="button button-primary" href="kontakt.html">Kontakt aufnehmen</a>
             <a class="button button-secondary" href="tel:+4917641233015">Direkt anrufen</a>
           </div>
-          <p class="hero-note">Telefonisch erreichbar Mo–Fr 10:00–12:00 Uhr. E-Mail jederzeit möglich.</p>
+          <details class="availability-disclosure availability-disclosure-compact" data-availability-details>
+            <summary class="availability-summary" data-availability-summary>
+              <span class="availability" data-availability-badge aria-live="polite">
+                <span class="dot" data-availability-dot aria-hidden="true"></span>
+                <span data-availability-text>Telefonische Sprechzeit: Mo–Fr 10:00–12:00 Uhr</span>
+                <span class="availability-toggle-symbol" aria-hidden="true">+</span>
+              </span>
+            </summary>
+            <div class="availability-panel">
+              <h2 class="availability-panel-title">Telefonische Erreichbarkeit</h2>
+              <p class="availability-panel-copy">Telefonisch erreichen Sie mich montags bis freitags zwischen 10:00 und 12:00 Uhr.</p>
+              <dl class="availability-schedule">
+                <div><dt>Montag</dt><dd>10:00–12:00 Uhr</dd></div>
+                <div><dt>Dienstag</dt><dd>10:00–12:00 Uhr</dd></div>
+                <div><dt>Mittwoch</dt><dd>10:00–12:00 Uhr</dd></div>
+                <div><dt>Donnerstag</dt><dd>10:00–12:00 Uhr</dd></div>
+                <div><dt>Freitag</dt><dd>10:00–12:00 Uhr</dd></div>
+              </dl>
+              <p class="availability-panel-note">Außerhalb der Sprechzeit können Sie jederzeit eine E-Mail schreiben.</p>
+              <div class="button-row availability-actions">
+                <a class="button button-secondary button-small" href="tel:+4917641233015">Direkt anrufen</a>
+                <a class="button button-secondary button-small" href="mailto:kontakt@buero-betreuung.de?subject=Nachricht%20an%20das%20Betreuungsb%C3%BCro&amp;body=Guten%20Tag%20Herr%20Sporbert%2C%0A%0Aich%20m%C3%B6chte%20eine%20Nachricht%20hinterlassen.%0A%0AName%3A%0ATelefonnummer%3A%0AAnliegen%3A%0AR%C3%BCckrufwunsch%3A%0A%0AMit%20freundlichen%20Gr%C3%BC%C3%9Fen">Nachricht per E-Mail hinterlassen</a>
+                <a class="button button-secondary button-small" href="kontakt.html">Zur Kontaktseite</a>
+              </div>
+            </div>
+          </details>
         </div>
         <div class="home-intro">
           <p class="home-lead">
-            Ich übernehme rechtliche Betreuungen und Verfahrenspflegschaften auf gerichtliche Bestellung – persönlich, strukturiert und mit Blick auf die konkrete Situation.
-          </p>
-          <p class="home-copy">
-            Rechtliche Angelegenheiten werden geordnet, Interessen im Verfahren sichtbar gemacht und die betroffene Person so weit wie möglich einbezogen.
+            Ich werde vom Gericht bestellt, wenn rechtliche Angelegenheiten zuverlässig geregelt oder Interessen in einem Verfahren sachlich eingebracht werden müssen.
           </p>
         </div>
       </header>
@@ -87,21 +109,32 @@
         <article class="service-card">
           <p class="page-kicker">Leistungsbereich</p>
           <h2>Rechtliche Betreuung</h2>
-          <p>Rechtliche Interessenwahrnehmung in den Aufgabenbereichen, die das Gericht konkret festlegt – keine Pflege und keine Entmündigung.</p>
-          <a class="button button-secondary button-small" href="rechtliche-betreuung.html">Mehr dazu</a>
+          <p>Rechtliche Interessenwahrnehmung in den Aufgabenbereichen, die das Gericht konkret festlegt.</p>
+          <ul>
+            <li>gerichtlich festgelegte Aufgabenbereiche</li>
+            <li>Behörden, Unterlagen, Fristen und Abstimmungen</li>
+            <li>keine Pflege und keine praktische Alltagshilfe</li>
+          </ul>
+          <a class="button button-secondary button-small" href="rechtliche-betreuung.html">Mehr zur rechtlichen Betreuung</a>
         </article>
         <article class="service-card">
           <p class="page-kicker">Leistungsbereich</p>
           <h2>Verfahrenspflegschaften</h2>
           <p>Interessenvertretung der betroffenen Person in einem konkreten gerichtlichen Verfahren – unabhängig und sachlich.</p>
-          <a class="button button-secondary button-small" href="verfahrenspflegschaften.html">Mehr dazu</a>
+          <ul>
+            <li>Bestellung in einem konkreten gerichtlichen Verfahren</li>
+            <li>Gespräche mit der betroffenen Person</li>
+            <li>sachliche Rückmeldung an das Gericht</li>
+          </ul>
+          <a class="button button-secondary button-small" href="verfahrenspflegschaften.html">Mehr zu Verfahrenspflegschaften</a>
         </article>
       </section>
 
       <section class="home-workflow" aria-labelledby="start-arbeitsweise">
-        <div class="section-heading">
+        <div class="section-heading home-workflow-copy">
           <p class="page-kicker">Arbeitsweise</p>
           <h2 id="start-arbeitsweise">Klar in der Sache, persönlich im Kontakt</h2>
+          <p>Unterlagen, Fristen und Abstimmungen werden nachvollziehbar organisiert. Gleichzeitig bleibt im Blick, was die betroffene Person selbst möchte, braucht und mitteilen kann.</p>
         </div>
         <div class="principle-grid">
           <article class="principle">
@@ -121,14 +154,37 @@
 
       <section class="home-contact" aria-labelledby="start-kontakt">
         <div class="home-contact-heading">
-          <div>
+          <div class="home-contact-copy">
             <p class="page-kicker">Kontaktaufnahme</p>
             <h2 id="start-kontakt">Kontakt und Erreichbarkeit</h2>
+            <p>Für Anfragen, Unterlagen oder Abstimmungen erreichen Sie mich per E-Mail oder während der Sprechzeit telefonisch.</p>
           </div>
-          <div class="availability" id="availability" aria-live="polite">
-            <span class="dot" id="availabilityDot" aria-hidden="true"></span>
-            <span id="availabilityText">Telefonische Sprechzeit: Mo–Fr 10:00–12:00 Uhr</span>
-          </div>
+          <details class="availability-disclosure availability-disclosure-expanded" data-availability-details>
+            <summary class="availability-summary" data-availability-summary>
+              <span class="availability" data-availability-badge aria-live="polite">
+                <span class="dot" data-availability-dot aria-hidden="true"></span>
+                <span data-availability-text>Telefonische Sprechzeit: Mo–Fr 10:00–12:00 Uhr</span>
+                <span class="availability-toggle-symbol" aria-hidden="true">+</span>
+              </span>
+            </summary>
+            <div class="availability-panel">
+              <h3 class="availability-panel-title">Telefonische Erreichbarkeit</h3>
+              <p class="availability-panel-copy">Telefonisch erreichen Sie mich montags bis freitags zwischen 10:00 und 12:00 Uhr.</p>
+              <dl class="availability-schedule">
+                <div><dt>Montag</dt><dd>10:00–12:00 Uhr</dd></div>
+                <div><dt>Dienstag</dt><dd>10:00–12:00 Uhr</dd></div>
+                <div><dt>Mittwoch</dt><dd>10:00–12:00 Uhr</dd></div>
+                <div><dt>Donnerstag</dt><dd>10:00–12:00 Uhr</dd></div>
+                <div><dt>Freitag</dt><dd>10:00–12:00 Uhr</dd></div>
+              </dl>
+              <p class="availability-panel-note">Außerhalb der Sprechzeit können Sie jederzeit eine E-Mail schreiben.</p>
+              <div class="button-row availability-actions">
+                <a class="button button-secondary button-small" href="tel:+4917641233015">Direkt anrufen</a>
+                <a class="button button-secondary button-small" href="mailto:kontakt@buero-betreuung.de?subject=Nachricht%20an%20das%20Betreuungsb%C3%BCro&amp;body=Guten%20Tag%20Herr%20Sporbert%2C%0A%0Aich%20m%C3%B6chte%20eine%20Nachricht%20hinterlassen.%0A%0AName%3A%0ATelefonnummer%3A%0AAnliegen%3A%0AR%C3%BCckrufwunsch%3A%0A%0AMit%20freundlichen%20Gr%C3%BC%C3%9Fen">Nachricht per E-Mail hinterlassen</a>
+                <a class="button button-secondary button-small" href="kontakt.html">Zur Kontaktseite</a>
+              </div>
+            </div>
+          </details>
         </div>
         <div class="button-row">
           <a class="button button-primary" href="mailto:kontakt@buero-betreuung.de">E-Mail schreiben</a>
@@ -142,13 +198,21 @@
     <div class="footer-grid">
       <div class="footer-identity">
         <strong>Maximilian Sporbert</strong><span>Betreuungsbüro</span><span>06722 Wetterzeube</span>
-        <div class="footer-contact"><a href="mailto:kontakt@buero-betreuung.de">E-Mail</a><a href="tel:+4917641233015">0176 41233015</a></div>
+        <span class="footer-contact-title">Kontakt</span>
+        <div class="footer-contact">
+          <span>E-Mail: <a href="mailto:kontakt@buero-betreuung.de">kontakt@buero-betreuung.de</a></span>
+          <span>Telefon: <a href="tel:+4917641233015">0176 41233015</a></span>
+        </div>
       </div>
       <nav class="footer-links" aria-label="Navigation im Fußbereich">
-        <a href="leistungen.html">Leistungen</a><a href="fachliche-einordnung.html">Fachliche Einordnung</a>
-        <a href="rechtliche-betreuung.html">Rechtliche Betreuung</a><a href="verfahrenspflegschaften.html">Verfahrenspflegschaften</a>
-        <a href="kontakt.html">Kontakt</a><a href="faq.html">FAQ</a>
-        <a href="impressum.html">Impressum</a><a href="datenschutz.html">Datenschutz</a>
+        <div class="footer-link-group">
+          <a href="leistungen.html">Leistungen</a><a href="rechtliche-betreuung.html">Rechtliche Betreuung</a>
+          <a href="verfahrenspflegschaften.html">Verfahrenspflegschaften</a><a href="fachliche-einordnung.html">Fachliche Einordnung</a>
+        </div>
+        <div class="footer-link-group">
+          <a href="kontakt.html">Kontakt</a><a href="faq.html">FAQ</a>
+          <a href="impressum.html">Impressum</a><a href="datenschutz.html">Datenschutz</a>
+        </div>
       </nav>
     </div>
     <div class="footer-meta">© Maximilian Sporbert</div>
