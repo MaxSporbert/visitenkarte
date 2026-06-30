@@ -50,6 +50,30 @@ function updateAvailability() {
     status.style.background = background;
     status.style.borderColor = border;
   });
+
+  const contactAvailabilityCards = document.querySelectorAll("[data-contact-availability]");
+  const emailColor = "#236d43";
+  const emailGlow = "rgba(35, 109, 67, .16)";
+
+  contactAvailabilityCards.forEach((card) => {
+    const emailDot = card.querySelector("[data-contact-email-dot]");
+    const phoneDot = card.querySelector("[data-contact-phone-dot]");
+    const phoneText = card.querySelector("[data-contact-phone-text]");
+
+    if (emailDot) {
+      emailDot.style.background = emailColor;
+      emailDot.style.boxShadow = "0 0 0 4px " + emailGlow;
+    }
+
+    if (phoneDot) {
+      phoneDot.style.background = color;
+      phoneDot.style.boxShadow = "0 0 0 4px " + glow;
+    }
+
+    if (phoneText) {
+      phoneText.textContent = isAvailable ? "jetzt erreichbar" : "Mo–Fr 10:00–12:00 Uhr";
+    }
+  });
 }
 
 updateAvailability();
