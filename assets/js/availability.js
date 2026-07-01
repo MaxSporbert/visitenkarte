@@ -57,13 +57,15 @@ function updateAvailability() {
 
   contactAvailabilityCards.forEach((card) => {
     const emailDot = card.querySelector("[data-contact-email-dot]");
+    const faxDot = card.querySelector("[data-contact-fax-dot]");
     const phoneDot = card.querySelector("[data-contact-phone-dot]");
     const phoneText = card.querySelector("[data-contact-phone-text]");
 
-    if (emailDot) {
-      emailDot.style.background = emailColor;
-      emailDot.style.boxShadow = "0 0 0 4px " + emailGlow;
-    }
+    [emailDot, faxDot].forEach((dot) => {
+      if (!dot) return;
+      dot.style.background = emailColor;
+      dot.style.boxShadow = "0 0 0 4px " + emailGlow;
+    });
 
     if (phoneDot) {
       phoneDot.style.background = color;
