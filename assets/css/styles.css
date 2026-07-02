@@ -3990,6 +3990,11 @@ li {
   margin-left: 0;
 }
 
+.home-identity > .button-row {
+  flex-wrap: wrap;
+  align-items: flex-start;
+}
+
 .home-hero .button {
   min-width: 196px;
   min-height: 50px;
@@ -4016,8 +4021,8 @@ li {
 }
 
 .home-hero .availability {
-  min-height: 42px;
-  padding: 9px 14px;
+  min-height: 50px;
+  padding: 12px 16px;
   border: 1px solid rgba(255, 250, 240, 0.12);
   background: rgba(4, 25, 31, 0.38);
   color: rgba(255, 250, 240, 0.82);
@@ -4026,11 +4031,17 @@ li {
 
 .home-hero .availability-disclosure {
   justify-items: start;
-  margin-top: 20px;
+  width: auto;
+  margin-top: 0;
 }
 
 .home-hero .availability-disclosure-compact .availability-summary {
   justify-content: flex-start;
+}
+
+.home-identity > .button-row > .availability-disclosure {
+  flex: 0 1 auto;
+  max-width: 38rem;
 }
 
 .home-hero .availability-summary:hover .availability,
@@ -5135,6 +5146,12 @@ li {
   }
 
   .home-hero .button-row {
+    width: 100%;
+  }
+
+  .home-identity > .button-row > .availability-disclosure,
+  .home-identity > .button-row > .availability-disclosure .availability-summary,
+  .home-identity > .button-row > .availability-disclosure .availability {
     width: 100%;
   }
 
