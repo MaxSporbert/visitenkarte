@@ -18,59 +18,6 @@ if (menuButton && siteNavigation) {
   });
 }
 
-const contactTemplates = {
-  "allgemeine-anfrage": {
-    label: "Betreff und Text werden für eine allgemeine Anfrage vorbereitet.",
-    subject: "Allgemeine Anfrage an das Betreuungsbüro",
-    body: "Guten Tag Herr Sporbert,%0A%0Aich habe eine allgemeine Anfrage.%0A%0AName:%0ATelefonnummer:%0AAnliegen:%0ABezug zu einem Verfahren oder Beschluss:%0A%0AMit freundlichen Grüßen"
-  },
-  "unterlagen-senden": {
-    label: "Betreff und Text werden für die Übersendung von Unterlagen vorbereitet.",
-    subject: "Unterlagen für das Betreuungsbüro",
-    body: "Guten Tag Herr Sporbert,%0A%0Aich möchte Unterlagen übersenden.%0A%0AName:%0ATelefonnummer:%0AWelche Unterlagen liegen vor?:%0AVon welcher Stelle stammt das Schreiben?:%0AGibt es eine Frist?:%0A%0AMit freundlichen Grüßen"
-  },
-  "rueckrufwunsch": {
-    label: "Betreff und Text werden für einen Rückrufwunsch vorbereitet.",
-    subject: "Rückrufwunsch",
-    body: "Guten Tag Herr Sporbert,%0A%0Aich bitte um einen Rückruf.%0A%0AName:%0ATelefonnummer:%0AWann sind Sie erreichbar?:%0AAnliegen:%0A%0AMit freundlichen Grüßen"
-  },
-  "abstimmung-verfahren": {
-    label: "Betreff und Text werden für eine Abstimmung zu einem Verfahren vorbereitet.",
-    subject: "Abstimmung zu einem Verfahren",
-    body: "Guten Tag Herr Sporbert,%0A%0Aich möchte eine Abstimmung zu einem Verfahren anfragen.%0A%0AName:%0ATelefonnummer:%0AZuständige Stelle oder Gericht:%0AWorum geht es konkret?:%0AWelche Unterlagen liegen vor?:%0A%0AMit freundlichen Grüßen"
-  },
-  "neue-kontaktdaten": {
-    label: "Betreff und Text werden für die Mitteilung neuer Kontaktdaten vorbereitet.",
-    subject: "Mitteilung neuer Kontaktdaten",
-    body: "Guten Tag Herr Sporbert,%0A%0Aich möchte geänderte Kontaktdaten mitteilen.%0A%0AName:%0ABisherige Kontaktdaten:%0ANeue Kontaktdaten:%0AAb wann gelten die Änderungen?:%0A%0AMit freundlichen Grüßen"
-  },
-  "frage-betreuung": {
-    label: "Betreff und Text werden für eine Frage zur rechtlichen Betreuung vorbereitet.",
-    subject: "Frage zur rechtlichen Betreuung",
-    body: "Guten Tag Herr Sporbert,%0A%0Aich habe eine Frage zur rechtlichen Betreuung.%0A%0AName:%0ATelefonnummer:%0AWelche Situation soll eingeordnet werden?:%0AGibt es bereits einen Beschluss oder ein Schreiben?:%0A%0AMit freundlichen Grüßen"
-  },
-  "frage-verfahrenspflegschaft": {
-    label: "Betreff und Text werden für eine Frage zur Verfahrenspflegschaft vorbereitet.",
-    subject: "Frage zur Verfahrenspflegschaft",
-    body: "Guten Tag Herr Sporbert,%0A%0Aich habe eine Frage zur Verfahrenspflegschaft.%0A%0AName:%0ATelefonnummer:%0AIn welchem Verfahren besteht die Frage?:%0ALiegen bereits Unterlagen oder Termine vor?:%0A%0AMit freundlichen Grüßen"
-  }
-};
-
-const contactTopic = document.querySelector("[data-contact-topic]");
-const contactLaunch = document.querySelector("[data-contact-launch]");
-const contactPreview = document.querySelector("[data-contact-preview]");
-
-if (contactTopic && contactLaunch && contactPreview) {
-  const updateContactTemplate = () => {
-    const template = contactTemplates[contactTopic.value] || contactTemplates["allgemeine-anfrage"];
-    contactPreview.textContent = template.label;
-    contactLaunch.href = `mailto:kontakt@buero-betreuung.de?subject=${encodeURIComponent(template.subject)}&body=${template.body}`;
-  };
-
-  contactTopic.addEventListener("change", updateContactTemplate);
-  updateContactTemplate();
-}
-
 const faqSearch = document.querySelector("[data-faq-search]");
 const faqFilters = document.querySelectorAll("[data-faq-filter]");
 const faqItems = document.querySelectorAll("[data-faq-item]");

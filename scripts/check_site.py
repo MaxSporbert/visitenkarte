@@ -1,4 +1,5 @@
 from pathlib import Path
+import json
 import re
 import sys
 import xml.etree.ElementTree as ET
@@ -10,11 +11,22 @@ HREF_RE = re.compile(r'''(?:href|src)="([^"]+)"''')
 TITLE_RE = re.compile(r"<title>([^<]+)</title>")
 DESCRIPTION_RE = re.compile(r'<meta name="description" content="([^"]+)">')
 CANONICAL_RE = re.compile(r'<link rel="canonical" href="([^"]+)">')
+H1_RE = re.compile(r"<h1(?:\s[^>]*)?>.*?</h1>", re.DOTALL)
+OG_TITLE_RE = re.compile(r'<meta property="og:title" content="([^"]+)">')
+OG_DESCRIPTION_RE = re.compile(r'<meta property="og:description" content="([^"]+)">')
+OG_URL_RE = re.compile(r'<meta property="og:url" content="([^"]+)">')
+JSON_LD_RE = re.compile(
+    r'<script type="application/ld\+json">\s*(.*?)\s*</script>',
+    re.DOTALL,
+)
 SITE_URL = "https://www.buero-betreuung.de"
 IMPORTANT_PAGES = {
     "leistungen.html",
     "rechtliche-betreuung.html",
-    "verfahrenspflegschaften.html",
+    "verfahrenspflegschaft.html",
+    "fuer-betroffene-und-angehoerige.html",
+    "ablauf-nach-bestellung.html",
+    "fuer-behoerden-und-einrichtungen.html",
     "kontakt.html",
     "faq.html",
     "begriffe.html",
@@ -38,7 +50,7 @@ def main() -> int:
     for html_file in HTML_FILES:
       content = html_file.read_text(encoding="utf-8")
       for match in HREF_RE.findall(content):
-        target = match.split("#", 1)[0]
+        target = match.split("#", 1)[0].split("?", 1)[0]
         if not target or is_external(target):
           continue
         if target.startswith("/"):
@@ -55,14 +67,21 @@ def main() -> int:
       if re.search(r"http://(?:www\.)?buero-betreuung\.de", content):
         errors.append(f"{html_file.name}: contains an HTTP site URL")
 
+      is_noindex = bool(re.search(r'<meta name="robots" content="[^"]*noindex', content))
       if html_file == ROOT / "404.html":
-        if '<meta name="robots" content="noindex">' not in content:
+        if not is_noindex:
           errors.append("404.html: missing noindex directive")
+        continue
+      if is_noindex:
         continue
 
       title_matches = TITLE_RE.findall(content)
       description_matches = DESCRIPTION_RE.findall(content)
       canonical_matches = CANONICAL_RE.findall(content)
+      h1_matches = H1_RE.findall(content)
+      og_title_matches = OG_TITLE_RE.findall(content)
+      og_description_matches = OG_DESCRIPTION_RE.findall(content)
+      og_url_matches = OG_URL_RE.findall(content)
 
       if len(title_matches) != 1:
         errors.append(f"{html_file.name}: expected exactly one title")
@@ -82,6 +101,17 @@ def main() -> int:
         canonicals[html_file.name] = canonical
         if canonical != expected:
           errors.append(f"{html_file.name}: canonical must be {expected}")
+
+      if len(h1_matches) != 1:
+        errors.append(f"{html_file.name}: expected exactly one h1")
+      if len(og_title_matches) != 1:
+        errors.append(f"{html_file.name}: expected exactly one og:title")
+      if len(og_description_matches) != 1:
+        errors.append(f"{html_file.name}: expected exactly one og:description")
+      if len(og_url_matches) != 1:
+        errors.append(f"{html_file.name}: expected exactly one og:url")
+      elif canonical_matches and og_url_matches[0] != canonical_matches[0]:
+        errors.append(f"{html_file.name}: og:url must match canonical")
 
     for label, values in (("title", titles), ("meta description", descriptions)):
       duplicates = {value for value in values.values() if list(values.values()).count(value) > 1}
@@ -136,6 +166,31 @@ def main() -> int:
       for tel_link in re.findall(r'href="(tel:[^"]+)"', content):
         if " " in tel_link or not re.fullmatch(r"tel:\+\d+", tel_link):
           errors.append(f"{path.name}: invalid tel link {tel_link}")
+
+    index_content = (ROOT / "index.html").read_text(encoding="utf-8")
+    json_ld_matches = JSON_LD_RE.findall(index_content)
+    if len(json_ld_matches) != 1:
+      errors.append("index.html: expected exactly one JSON-LD block")
+    else:
+      try:
+        structured_data = json.loads(json_ld_matches[0])
+      except json.JSONDecodeError as error:
+        errors.append(f"index.html: invalid JSON-LD ({error})")
+      else:
+        expected_structured_data = {
+          "name": "Betreuungsbüro Maximilian Sporbert",
+          "url": f"{SITE_URL}/",
+          "email": "kontakt@buero-betreuung.de",
+          "telephone": "+4917641233015",
+          "faxNumber": "+4936693164997",
+        }
+        for key, expected_value in expected_structured_data.items():
+          if structured_data.get(key) != expected_value:
+            errors.append(f"index.html: JSON-LD {key} must be {expected_value}")
+
+        expected_regions = {"Burgenlandkreis", "Zeitz", "Weißenfels", "Gera", "Umland"}
+        if set(structured_data.get("areaServed", [])) != expected_regions:
+          errors.append("index.html: JSON-LD areaServed is incomplete")
 
     required = [
       ROOT / "404.html",
