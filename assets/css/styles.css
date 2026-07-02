@@ -5321,3 +5321,33 @@ li {
     color: #555;
   }
 }
+
+/* Feinschliff Hero: Sprechzeiten in der CTA-Zeile */
+.home-hero .button-row {
+  align-items: stretch;
+}
+
+.home-hero .button-row > .availability-disclosure {
+  margin-top: 0;
+}
+
+.home-hero .button-row > .availability-disclosure .availability-summary {
+  height: 100%;
+}
+
+.home-hero .button-row > .availability-disclosure .availability {
+  min-height: 44px;
+  height: 100%;
+  display: inline-flex;
+  align-items: center;
+}
+
+@media (max-width: 700px) {
+  .home-hero .button-row {
+    align-items: flex-start;
+  }
+
+  .home-hero .button-row > .availability-disclosure {
+    width: 100%;
+  }
+}
