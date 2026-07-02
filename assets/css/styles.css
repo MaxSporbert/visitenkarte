@@ -3957,26 +3957,44 @@ li {
   display: none;
 }
 
-.home-name {
-  margin-top: 34px;
+.home-sender {
+  display: grid;
+  gap: 8px;
+  max-width: 42rem;
+  margin-top: 38px;
+}
+
+.home-sender .page-kicker {
+  margin: 0 0 2px;
   color: var(--gold-soft);
-  font-size: 1.3rem;
-  line-height: 1.4;
+  font-size: 0.68rem;
+  letter-spacing: 0.18em;
+}
+
+.home-name {
+  margin: 0;
+  color: #fffaf0;
+  font-family: var(--serif);
+  font-size: clamp(1.38rem, 1.8vw, 1.65rem);
+  font-weight: 500;
+  letter-spacing: -0.012em;
+  line-height: 1.3;
 }
 
 .home-fields {
-  margin-top: 12px;
-  font-size: 1.08rem;
-  font-weight: 540;
+  margin: 4px 0 0;
+  color: rgba(255, 250, 240, 0.8);
+  font-size: 1.02rem;
+  font-weight: 520;
   letter-spacing: 0.01em;
   line-height: 1.55;
 }
 
 .home-copy-hero {
-  margin-top: 8px;
-  color: rgba(255, 250, 240, 0.68);
-  font-size: 1rem;
-  font-weight: 500;
+  margin: 0;
+  color: rgba(255, 250, 240, 0.58);
+  font-size: 0.94rem;
+  font-weight: 480;
   letter-spacing: 0.02em;
   line-height: 1.7;
 }
@@ -5141,8 +5159,11 @@ li {
   }
 
   .home-name {
-    margin-top: 28px;
     font-size: 1.22rem;
+  }
+
+  .home-sender {
+    margin-top: 30px;
   }
 
   .home-hero .button-row {
@@ -5336,35 +5357,5 @@ li {
     content: " (" attr(href) ")";
     font-size: 0.85em;
     color: #555;
-  }
-}
-
-/* Feinschliff Hero: Sprechzeiten in der CTA-Zeile */
-.home-hero .button-row {
-  align-items: stretch;
-}
-
-.home-hero .button-row > .availability-disclosure {
-  margin-top: 0;
-}
-
-.home-hero .button-row > .availability-disclosure .availability-summary {
-  height: 100%;
-}
-
-.home-hero .button-row > .availability-disclosure .availability {
-  min-height: 44px;
-  height: 100%;
-  display: inline-flex;
-  align-items: center;
-}
-
-@media (max-width: 700px) {
-  .home-hero .button-row {
-    align-items: flex-start;
-  }
-
-  .home-hero .button-row > .availability-disclosure {
-    width: 100%;
   }
 }
