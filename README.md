@@ -8,7 +8,10 @@ Statische GitHub-Pages-Website des Betreuungsbüros Sporbert.
 - `ueber-mich.html`: Persönlicher Hintergrund, Qualifikation und Registrierung
 - `leistungen.html`: Zentrale Übersicht der beiden Tätigkeitsbereiche
 - `rechtliche-betreuung.html`: Informationen zum Tätigkeitsbereich Rechtliche Betreuung
-- `verfahrenspflegschaften.html`: Informationen zum Tätigkeitsbereich Verfahrenspflegschaften
+- `verfahrenspflegschaft.html`: Informationen zum Tätigkeitsbereich Verfahrenspflegschaft
+- `fuer-betroffene-und-angehoerige.html`: Orientierung für betroffene Personen und Angehörige
+- `ablauf-nach-bestellung.html`: Ablauf nach gerichtlicher Bestellung
+- `fuer-behoerden-und-einrichtungen.html`: kompakter Zugang für professionelle Beteiligte
 - `fachliche-einordnung.html`: Kompakte Einordnung ausgewählter Rechtsprechung
 - `faq.html`: Antworten auf häufige Fragen
 - `kontakt.html`: Kontaktdaten, Erreichbarkeit und digitale Kontaktkarte
