@@ -4370,6 +4370,41 @@ li {
   font-size: clamp(2rem, 2.8vw, 3rem);
 }
 
+.legal-care-page .content-section > h2 {
+  max-width: 14ch;
+}
+
+.legal-care-page .legal-care-boundaries > .boundary-grid {
+  grid-column: 2;
+  margin-top: 22px;
+}
+
+.legal-care-page .legal-care-boundaries .boundary-card {
+  padding: clamp(26px, 3vw, 36px);
+}
+
+.legal-care-page .legal-care-boundaries .boundary-card h3 {
+  margin-bottom: 20px;
+  font-family: var(--serif);
+  font-size: 1.25rem;
+  font-weight: 500;
+  line-height: 1.2;
+}
+
+.legal-care-page .legal-care-boundaries .boundary-card ul {
+  padding-left: 0;
+  list-style: none;
+}
+
+.legal-care-page .legal-care-boundaries .boundary-card li {
+  padding: 10px 0;
+  border-top: 1px solid var(--line);
+}
+
+.legal-care-page .legal-care-boundaries > p:last-child {
+  margin-top: 20px;
+}
+
 .service-page .content-section > p {
   margin-top: 0;
   font-size: 1.04rem;
@@ -5454,6 +5489,9 @@ li {
   .service-page .content-section > h2,
   .service-page .content-section > p,
   .service-page .content-section > .comparison-grid,
+  .service-page .content-section > .boundary-grid,
+  .service-page .content-section > .task-grid,
+  .service-page .content-section > .teaser-grid,
   .service-page .content-section > .text-link,
   .service-page .content-section > .button {
     grid-column: 1;
