@@ -4528,6 +4528,17 @@ li {
     var(--color-bg-soft);
 }
 
+.services-overview-page .services-boundary-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px 28px;
+  margin-top: 28px;
+}
+
+.services-overview-page .services-boundary-links .text-link {
+  margin: 0;
+}
+
 .audience-flow {
   display: grid;
   gap: clamp(64px, 7vw, 104px);
@@ -5158,6 +5169,11 @@ li {
   font-size: clamp(2.15rem, 3vw, 3.35rem);
   font-weight: 500;
   line-height: 1.04;
+  text-wrap: balance;
+}
+
+.definition-limits .definition-section-heading h2 {
+  max-width: 13ch;
 }
 
 .definition-section-heading > p:last-child {
