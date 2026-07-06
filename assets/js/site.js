@@ -100,11 +100,12 @@ const revealGroupsByPage = {
     { selector: ".home-summary .service-card", stagger: true },
     { selector: '.home-situation[aria-labelledby="start-abgrenzung"] > *', stagger: true },
     { selector: ".home-workflow .principle", stagger: true },
-    { selector: ".home-region" },
+    { selector: ".home-region-copy, .home-region-map", stagger: true, fadeOnly: true },
     { selector: ".home-contact" },
   ],
   "leistungen.html": [
     { selector: ".services-overview-page .service-area", stagger: true },
+    { selector: ".special-care-grid .special-care-card", stagger: true },
     { selector: ".services-overview-page .services-boundary-section" },
   ],
   "ablauf-nach-bestellung.html": [
@@ -130,12 +131,10 @@ const revealGroupsByPage = {
   ],
   "faq.html": [
     { selector: ".faq-tools" },
-    { selector: ".faq-category", stagger: true, limit: 2 },
     { selector: ".faq-resources", stagger: true },
   ],
   "begriffe.html": [
     { selector: ".faq-tools" },
-    { selector: "[data-glossary-list]" },
   ],
   "kontakt.html": [
     { selector: ".contact-direct > .contact-panel", stagger: true },
