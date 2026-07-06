@@ -100,6 +100,7 @@ const revealGroupsByPage = {
     { selector: ".home-summary .service-card", stagger: true },
     { selector: '.home-situation[aria-labelledby="start-abgrenzung"] > *', stagger: true },
     { selector: ".home-workflow .principle", stagger: true },
+    { selector: ".home-region" },
     { selector: ".home-contact" },
   ],
   "leistungen.html": [
@@ -204,7 +205,7 @@ if (revealTargets.length) {
       });
     }, {
       rootMargin: "0px 0px -8% 0px",
-      threshold: 0.12,
+      threshold: 0.4,
     });
 
     revealTargets.forEach((element) => revealObserver.observe(element));
