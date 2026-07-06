@@ -1,5 +1,18 @@
 document.documentElement.classList.add("js");
 
+const homeHero = document.querySelector(".home-hero");
+if (homeHero) {
+  const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  if (reducedMotion) {
+    homeHero.classList.add("is-intro-visible");
+  } else {
+    requestAnimationFrame(() => {
+      requestAnimationFrame(() => homeHero.classList.add("is-intro-visible"));
+    });
+  }
+}
+
 const menuButton = document.querySelector("[data-menu-toggle]");
 const siteNavigation = document.querySelector("[data-site-nav]");
 

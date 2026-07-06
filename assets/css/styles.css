@@ -4097,29 +4097,40 @@ li {
 }
 
 .home-hero {
-  min-height: clamp(550px, 61vh, 660px);
+  min-height: clamp(500px, 57vh, 590px);
   align-items: center;
   padding:
-    clamp(62px, 6.5vw, 96px)
+    clamp(52px, 5.2vw, 76px)
     max(42px, calc((100vw - var(--container)) / 2));
   background:
-    linear-gradient(115deg, rgba(255, 255, 255, 0.028), transparent 48%),
-    radial-gradient(circle at 87% 20%, rgba(184, 144, 69, 0.12), transparent 24rem),
+    repeating-linear-gradient(
+      90deg,
+      transparent 0 17px,
+      rgba(255, 250, 240, 0.012) 18px
+    ) 100% 0 / 38% 100% no-repeat,
+    radial-gradient(ellipse at 83% 32%, rgba(184, 144, 69, 0.17), transparent 30rem),
+    linear-gradient(110deg, rgba(4, 34, 40, 0.08), rgba(31, 57, 55, 0.24)),
     var(--color-dark);
 }
 
 .home-identity {
   display: grid;
-  grid-template-columns: minmax(0, 1.35fr) minmax(280px, 0.65fr);
-  gap: clamp(56px, 8vw, 120px);
-  align-items: end;
+  grid-template-areas:
+    "title sender"
+    "actions actions";
+  grid-template-columns: minmax(0, 1.18fr) minmax(330px, 0.82fr);
+  gap: clamp(32px, 4vw, 58px) clamp(46px, 6vw, 88px);
+  align-items: center;
   width: 100%;
+  min-height: 0;
   max-width: none;
 }
 
 .home-identity .page-title {
+  grid-area: title;
+  align-self: center;
   max-width: none;
-  font-size: clamp(2.75rem, 3.4vw, 3.65rem);
+  font-size: clamp(3.05rem, 4.35vw, 4.75rem);
   font-weight: 400;
   line-height: 1.01;
   letter-spacing: -0.025em;
@@ -4134,12 +4145,30 @@ li {
 }
 
 .home-sender {
+  grid-area: sender;
+  position: relative;
   display: grid;
   gap: 8px;
-  max-width: 30rem;
-  margin: 0 0 8px;
-  padding: 6px 0 8px clamp(28px, 3.5vw, 52px);
-  border-left: 1px solid rgba(255, 250, 240, 0.2);
+  max-width: 32rem;
+  min-height: 0;
+  margin: 0;
+  padding: 18px 0 18px clamp(30px, 3.5vw, 52px);
+}
+
+.home-sender::before {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 1px;
+  background: linear-gradient(
+    180deg,
+    transparent,
+    rgba(255, 250, 240, 0.16) 22%,
+    rgba(255, 250, 240, 0.16) 78%,
+    transparent
+  );
+  content: "";
 }
 
 .home-sender .page-kicker {
@@ -4153,24 +4182,34 @@ li {
   margin: 0;
   color: #fffaf0;
   font-family: var(--serif);
-  font-size: clamp(1.38rem, 1.8vw, 1.65rem);
+  font-size: clamp(1.75rem, 2.35vw, 2.2rem);
   font-weight: 500;
   letter-spacing: -0.012em;
   line-height: 1.3;
 }
 
 .home-fields {
-  margin: 4px 0 0;
-  color: rgba(255, 250, 240, 0.8);
+  margin: 18px 0 0;
+  padding-top: 18px;
+  border-top: 1px solid rgba(183, 146, 74, 0.44);
+  color: rgba(255, 250, 240, 0.84);
   font-size: 1.02rem;
   font-weight: 520;
   letter-spacing: 0.01em;
   line-height: 1.55;
 }
 
+.home-fields span {
+  display: block;
+}
+
+.home-fields span + span {
+  margin-top: 2px;
+}
+
 .home-copy-hero {
   margin: 0;
-  color: rgba(255, 250, 240, 0.58);
+  color: rgba(255, 250, 240, 0.68);
   font-size: 0.94rem;
   font-weight: 480;
   letter-spacing: 0.02em;
@@ -4179,6 +4218,32 @@ li {
 
 .home-sender .home-name {
   margin: 0;
+}
+
+.js .home-hero .page-title,
+.js .home-hero .home-sender,
+.js .home-hero .hero-actions {
+  opacity: 0;
+  transform: translateY(12px);
+  transition:
+    opacity 1800ms cubic-bezier(0.25, 0.46, 0.45, 0.94),
+    transform 1800ms cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  transition-delay: 160ms;
+}
+
+.js .home-hero .home-sender {
+  transition-delay: 620ms;
+}
+
+.js .home-hero .hero-actions {
+  transition-delay: 980ms;
+}
+
+.js .home-hero.is-intro-visible .page-title,
+.js .home-hero.is-intro-visible .home-sender,
+.js .home-hero.is-intro-visible .hero-actions {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .home-hero .button-row {
@@ -4193,6 +4258,52 @@ li {
 .home-identity > .button-row {
   flex-wrap: wrap;
   align-items: flex-start;
+}
+
+.home-identity > .hero-actions {
+  grid-area: actions;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(190px, max-content)) minmax(250px, max-content);
+  gap: 14px 16px;
+  width: 100%;
+  margin: 0;
+}
+
+.home-identity > .hero-actions .button {
+  min-width: 200px;
+  justify-content: center;
+}
+
+.hero-hours-chip {
+  display: grid;
+  grid-template-columns: auto;
+  align-content: center;
+  min-height: 50px;
+  padding: 8px 22px;
+  border: 1px solid rgba(183, 146, 74, 0.48);
+  border-radius: 999px;
+  color: #fffaf0;
+  line-height: 1.2;
+  text-decoration: none;
+  transition: border-color 180ms ease, background-color 180ms ease;
+}
+
+.hero-hours-chip span {
+  color: var(--gold-soft);
+  font-size: 0.76rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+}
+
+.hero-hours-chip small {
+  margin-top: 3px;
+  color: rgba(255, 250, 240, 0.72);
+  font-size: 0.74rem;
+}
+
+.hero-hours-chip:hover {
+  border-color: var(--gold-soft);
+  background: rgba(255, 250, 240, 0.055);
 }
 
 .home-hero .button {
@@ -4434,6 +4545,7 @@ li {
 
 .home-audience .task-card .text-link {
   margin-top: 16px;
+  border-bottom: 0;
 }
 
 .home-situation[aria-labelledby="start-zielgruppen"] .task-grid {
@@ -5871,14 +5983,47 @@ li {
 
   .home-identity {
     display: block;
+    min-height: 0;
   }
 
   .home-sender {
     max-width: 34rem;
+    min-height: 0;
     margin-top: 32px;
     padding: 24px 0 0;
-    border-top: 1px solid rgba(255, 250, 240, 0.2);
     border-left: 0;
+  }
+
+  .home-fields {
+    margin-top: 4px;
+    padding-top: 0;
+    border-top: 0;
+  }
+
+  .home-identity > .hero-actions {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    margin-top: 32px;
+  }
+
+  .home-identity > .hero-actions .button {
+    min-width: 0;
+  }
+
+  .hero-hours-chip {
+    grid-column: 1 / -1;
+  }
+
+  .home-sender::before {
+    top: 0;
+    right: 0;
+    bottom: auto;
+    width: 100%;
+    height: 1px;
+    background: linear-gradient(
+      90deg,
+      rgba(255, 250, 240, 0.16),
+      transparent 78%
+    );
   }
 
   .home-situation[aria-labelledby="start-zielgruppen"] .task-grid {
@@ -5960,6 +6105,14 @@ li {
   .site-header {
     min-height: 76px;
     padding: 12px 18px;
+  }
+
+  .home-identity > .hero-actions {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-hours-chip {
+    grid-column: auto;
   }
 
   .page-card {
