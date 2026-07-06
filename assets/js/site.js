@@ -100,7 +100,7 @@ const revealGroupsByPage = {
     { selector: ".home-summary .service-card", stagger: true },
     { selector: '.home-situation[aria-labelledby="start-abgrenzung"] > *', stagger: true },
     { selector: ".home-workflow .principle", stagger: true },
-    { selector: ".home-region" },
+    { selector: ".home-region-copy, .home-region-map", stagger: true, fadeOnly: true },
     { selector: ".home-contact" },
   ],
   "leistungen.html": [
