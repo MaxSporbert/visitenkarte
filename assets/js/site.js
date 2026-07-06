@@ -105,6 +105,7 @@ const revealGroupsByPage = {
   ],
   "leistungen.html": [
     { selector: ".services-overview-page .service-area", stagger: true },
+    { selector: ".special-care-grid .special-care-card", stagger: true },
     { selector: ".services-overview-page .services-boundary-section" },
   ],
   "ablauf-nach-bestellung.html": [
