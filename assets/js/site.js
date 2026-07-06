@@ -185,6 +185,7 @@ const registerRevealGroup = ({ selector, stagger = false, fadeOnly = false, limi
 };
 
 (revealGroupsByPage[pageName] || []).forEach(registerRevealGroup);
+registerRevealGroup({ selector: ".editorial-availability-notice", fadeOnly: true });
 registerRevealGroup({ selector: ".contact-cta, .read-next" });
 
 if (revealTargets.length) {
