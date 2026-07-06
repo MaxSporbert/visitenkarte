@@ -130,12 +130,10 @@ const revealGroupsByPage = {
   ],
   "faq.html": [
     { selector: ".faq-tools" },
-    { selector: ".faq-category", stagger: true, limit: 2 },
     { selector: ".faq-resources", stagger: true },
   ],
   "begriffe.html": [
     { selector: ".faq-tools" },
-    { selector: "[data-glossary-list]" },
   ],
   "kontakt.html": [
     { selector: ".contact-direct > .contact-panel", stagger: true },
