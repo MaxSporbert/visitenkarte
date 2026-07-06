@@ -4109,13 +4109,17 @@ li {
 }
 
 .home-identity {
+  display: grid;
+  grid-template-columns: minmax(0, 1.35fr) minmax(280px, 0.65fr);
+  gap: clamp(56px, 8vw, 120px);
+  align-items: end;
   width: 100%;
-  max-width: 64rem;
+  max-width: none;
 }
 
 .home-identity .page-title {
   max-width: none;
-  font-size: clamp(3.65rem, 4.65vw, 4.95rem);
+  font-size: clamp(2.75rem, 3.4vw, 3.65rem);
   font-weight: 400;
   line-height: 1.01;
   letter-spacing: -0.025em;
@@ -4132,8 +4136,10 @@ li {
 .home-sender {
   display: grid;
   gap: 8px;
-  max-width: 42rem;
-  margin-top: 38px;
+  max-width: 30rem;
+  margin: 0 0 8px;
+  padding: 6px 0 8px clamp(28px, 3.5vw, 52px);
+  border-left: 1px solid rgba(255, 250, 240, 0.2);
 }
 
 .home-sender .page-kicker {
@@ -4169,6 +4175,10 @@ li {
   font-weight: 480;
   letter-spacing: 0.02em;
   line-height: 1.7;
+}
+
+.home-sender .home-name {
+  margin: 0;
 }
 
 .home-hero .button-row {
@@ -5859,6 +5869,18 @@ li {
     padding-inline: 24px;
   }
 
+  .home-identity {
+    display: block;
+  }
+
+  .home-sender {
+    max-width: 34rem;
+    margin-top: 32px;
+    padding: 24px 0 0;
+    border-top: 1px solid rgba(255, 250, 240, 0.2);
+    border-left: 0;
+  }
+
   .home-situation[aria-labelledby="start-zielgruppen"] .task-grid {
     grid-template-columns: 1fr;
   }
@@ -6064,8 +6086,8 @@ li {
 
   .home-identity .page-title {
     max-width: 11ch;
-    font-size: clamp(2.72rem, 12.2vw, 3.55rem);
-    line-height: 0.96;
+    font-size: clamp(2.25rem, 10vw, 2.9rem);
+    line-height: 0.98;
     letter-spacing: -0.035em;
   }
 
