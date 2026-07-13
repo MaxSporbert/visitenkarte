@@ -1,0 +1,128 @@
+/* Design-Tokens: zentrale Quelle für Farben, Typografie, Abstände und
+   Komponenten-Basiswerte. Wird von styles.css referenziert und auf jeder
+   Seite vor styles.css eingebunden. */
+
+@font-face {
+  font-family: "Cormorant Garamond";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("../fonts/cg-norm-400.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Cormorant Garamond";
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("../fonts/cg-norm-500.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Cormorant Garamond";
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("../fonts/cg-norm-600.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Cormorant Garamond";
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  src: url("../fonts/cg-ital-400.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Cormorant Garamond";
+  font-style: italic;
+  font-weight: 500;
+  font-display: swap;
+  src: url("../fonts/cg-ital-500.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("../fonts/inter-400.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("../fonts/inter-500.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("../fonts/inter-600.woff2") format("woff2");
+}
+
+:root {
+  /* Farben */
+  --color-navy-900: #0e2235;
+  --color-navy-800: #173049;
+  --color-navy-700: #22405e;
+  --color-paper: #fbfaf6;
+  --color-stone-100: #eef0f1;
+  --color-stone-200: #dfe3df;
+  --color-ink: #182430;
+  --color-ink-soft: #4a5560;
+  --color-accent: #3f7ea6;
+  --color-accent-soft: #a9c6d8;
+  --color-warning: #9b6514;
+  --color-negative: #804640;
+  --color-line: #dcdfdc;
+  --color-line-strong: rgba(14, 34, 53, 0.22);
+  --color-white: #ffffff;
+  --color-accent-line: rgba(63, 126, 166, 0.35);
+
+  /* Halbtransparente Varianten für Overlays/Fokusränder */
+  --color-navy-900-a15: rgba(14, 34, 53, 0.15);
+  --color-white-a10: rgba(255, 255, 255, 0.1);
+  --color-white-a30: rgba(255, 255, 255, 0.3);
+  --color-white-a65: rgba(255, 255, 255, 0.65);
+
+  /* Typografie */
+  --font-serif: "Cormorant Garamond", Georgia, "Times New Roman", serif;
+  --font-sans: "Inter", "Helvetica Neue", Arial, ui-sans-serif, system-ui, sans-serif;
+
+  --text-h1: clamp(2.375rem, 1.7rem + 2.8vw, 3.75rem);
+  --text-h2: clamp(1.75rem, 1.4rem + 1.5vw, 2.375rem);
+  --text-h3: 1.375rem;
+  --text-body: 1rem;
+  --text-small: 0.875rem;
+  --text-eyebrow: 0.9375rem;
+
+  /* Abstände */
+  --space-3xs: 4px;
+  --space-2xs: 8px;
+  --space-xs: 12px;
+  --space-s: 16px;
+  --space-m: 24px;
+  --space-l: 40px;
+  --space-xl: 64px;
+  --space-2xl: 96px;
+  --space-3xl: 128px;
+
+  --container: 1180px;
+  --container-wide: 1440px;
+  --text-column: 720px;
+  --layout-shell: min(1640px, calc(100vw - 48px));
+
+  /* Radius & Schatten */
+  --radius: 3px;
+  --radius-pill: 999px;
+  --shadow-card: 0 18px 46px rgba(14, 34, 53, 0.08);
+
+  /* Übergänge */
+  --transition-fast: 0.2s ease;
+}
