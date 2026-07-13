@@ -114,7 +114,8 @@ const revealGroupsByPage = {
     { selector: '.home-situation[aria-labelledby="start-abgrenzung"] > *', stagger: true },
     { selector: ".home-workflow .principle", stagger: true },
     { selector: ".home-region-copy, .home-region-map", stagger: true, fadeOnly: true },
-    { selector: ".home-contact" },
+    { selector: ".home-contact-heading" },
+    { selector: ".home-contact-actions .button", stagger: true },
   ],
   "leistungen.html": [
     { selector: ".services-overview-page .service-area", stagger: true },
