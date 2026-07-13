@@ -2126,9 +2126,8 @@ html {
 .hero-inner {
   position: relative;
   z-index: 1;
-  max-width: var(--container-wide);
-  margin-inline: auto;
-  padding-inline: clamp(20px, 5.5vw, 64px);
+  padding-right: max(36px, calc((100vw - var(--container)) / 2));
+  padding-left: max(36px, calc((100vw - var(--container)) / 2));
 }
 
 .hero-grid {
@@ -2360,6 +2359,11 @@ html {
 }
 
 @media (max-width: 720px) {
+  .hero-inner {
+    padding-right: 24px;
+    padding-left: 24px;
+  }
+
   .hero-baseline {
     grid-template-columns: 1fr;
     gap: 22px;
@@ -3470,6 +3474,12 @@ li {
   padding-top: clamp(66px, 7vw, 105px);
   padding-bottom: clamp(66px, 7vw, 105px);
   background: var(--color-stone-100);
+}
+
+@media (max-width: 860px) {
+  .home-summary {
+    grid-template-columns: 1fr;
+  }
 }
 
 .home-boundary {
@@ -5524,5 +5534,175 @@ li {
     content: " (" attr(href) ")";
     font-size: 0.85em;
     color: var(--color-ink-soft);
+  }
+}
+
+/* --- Mobile-responsiveness restoration (2026-07-13): re-asserts breakpoint
+   overrides that later unconditional rules had been silently shadowing. --- */
+
+@media (max-width: 1080px) {
+  .notice-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 720px) {
+  .home-page.page-card {
+    padding-top: 26px;
+  }
+}
+
+@media (max-width: 720px) {
+  .principle {
+    padding: 20px;
+  }
+}
+
+@media (max-width: 720px) {
+  .summary-box {
+    padding: 22px;
+  }
+}
+
+@media (max-width: 980px) {
+  .task-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 720px) {
+  body {
+    padding: 12px 0 16px;
+    padding-bottom: 18px;
+  }
+}
+
+@media (max-width: 720px) {
+  .site-nav {
+    gap: 6px 16px;
+  }
+}
+
+@media (max-width: 860px) {
+  .site-nav {
+    gap: 0;
+  }
+}
+
+@media (max-width: 720px) {
+  .site-nav a {
+    padding: 7px 0 6px;
+  }
+}
+
+@media (max-width: 860px) {
+  .site-nav a {
+    padding: 12px 10px;
+  }
+}
+
+@media (max-width: 860px) {
+  .header-availability-link {
+    display: none;
+  }
+}
+
+@media (max-width: 720px) {
+  .page-intro {
+    padding-bottom: 38px;
+  }
+}
+
+@media (max-width: 720px) {
+  .home-summary {
+    gap: 30px;
+    padding: 22px 0 28px;
+  }
+}
+
+@media (max-width: 720px) {
+  .home-workflow {
+    gap: 20px;
+    padding: 28px 0;
+  }
+}
+
+@media (max-width: 980px) {
+  .home-workflow {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 1100px) {
+  .home-workflow {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 1100px) {
+  .home-contact {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 720px) {
+  .editorial-content {
+    gap: 30px;
+  }
+}
+
+@media (max-width: 720px) {
+  .editorial-section {
+    padding-top: 20px;
+  }
+}
+
+@media (max-width: 720px) {
+  .filter-pills {
+    gap: 10px;
+  }
+}
+
+@media (max-width: 1080px) {
+  .contact-intro {
+    gap: 20px;
+  }
+}
+
+@media (max-width: 720px) {
+  .contact-cta {
+    padding: 22px;
+  }
+}
+
+@media (max-width: 860px) {
+  .contact-cta {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 720px) {
+  .footer-grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+}
+
+@media (max-width: 980px) {
+  .footer-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+/* The mobile dropdown nav (.js .site-nav[data-open="true"]) is positioned
+   absolute against .site-header. Without a sticky header, the dropdown's
+   anchor point scrolls out of view with the page, so opening the menu after
+   scrolling down shows nothing. Sticky-anchor the header on mobile/tablet so
+   the menu always opens where the user can see it. */
+@media (max-width: 860px) {
+  .site-header {
+    position: sticky;
+    top: 0;
+    z-index: 60;
   }
 }
