@@ -5681,16 +5681,16 @@ li {
   }
 }
 
+@media (max-width: 980px) {
+  .footer-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
 @media (max-width: 720px) {
   .footer-grid {
     grid-template-columns: 1fr;
     gap: 24px;
-  }
-}
-
-@media (max-width: 980px) {
-  .footer-grid {
-    grid-template-columns: 1fr 1fr;
   }
 }
 
