@@ -1,6 +1,6 @@
 document.documentElement.classList.add("js");
 
-const homeHero = document.querySelector(".home-hero");
+const homeHero = document.querySelector(".hero");
 if (homeHero) {
   const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
