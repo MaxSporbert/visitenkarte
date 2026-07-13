@@ -2113,8 +2113,8 @@ html {
 
 .hero-watermark {
   position: absolute;
-  right: clamp(-40px, -2vw, -10px);
-  top: clamp(-160px, -12vw, -80px);
+  right: clamp(20px, 6vw, 140px);
+  top: clamp(-120px, -9vw, -60px);
   font-family: var(--font-serif);
   font-size: clamp(320px, 40vw, 760px);
   line-height: 1;
