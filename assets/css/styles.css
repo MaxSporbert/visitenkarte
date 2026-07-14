@@ -5706,3 +5706,25 @@ li {
     z-index: 60;
   }
 }
+
+/* Above the 980px breakpoint .contact-status-card narrows to fit its grid
+   column, which was too tight for "Mo–Fr 10:00–12:00 Uhr" and wrapped it
+   mid-phrase. Below 980px the card already gets a wider max-width and fits
+   on one line, so this is scoped to desktop only. */
+@media (min-width: 981px) {
+  .contact-status-value {
+    white-space: nowrap;
+  }
+}
+
+/* On narrow viewports the pills/links wrap by leftover flex-wrap space, so a
+   short label like "Vorsorge" ends up riding alongside an unrelated, wider
+   item instead of starting its own row like every other item does. Stack
+   them in a single column on mobile so ordering reads top to bottom. */
+@media (max-width: 720px) {
+  .faq-jump-links,
+  .filter-pills {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
