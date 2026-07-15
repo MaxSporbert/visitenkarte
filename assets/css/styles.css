@@ -323,13 +323,14 @@ a {
 }
 
 .contact-status-kicker {
-  margin: 0 0 10px;
-  color: var(--color-ink-soft);
-  font-size: 0.75rem;
-  font-weight: 700;
-  letter-spacing: 0.08em;
+  margin: 0 0 12px;
+  color: var(--color-accent);
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: 0.95rem;
+  font-weight: 500;
+  letter-spacing: 0.01em;
   line-height: 1.2;
-  text-transform: uppercase;
 }
 
 .contact-status-dot {
@@ -339,7 +340,7 @@ a {
 .contact-status-label {
   color: var(--color-ink);
   font-size: 0.94rem;
-  font-weight: 600;
+  font-weight: 500;
   line-height: 1.4;
 }
 
@@ -2323,20 +2324,36 @@ html {
   background: linear-gradient(90deg, var(--color-accent) 0%, var(--color-accent-soft) 40%, transparent 100%);
 }
 
-.js .hero {
+.js .hero-intro-item {
   opacity: 0;
-  transform: translateY(14px);
-  transition: opacity 900ms cubic-bezier(0.22, 1, 0.36, 1),
-    transform 900ms cubic-bezier(0.22, 1, 0.36, 1);
+  transform: translateY(16px);
+  transition: opacity 850ms cubic-bezier(0.22, 1, 0.36, 1),
+    transform 850ms cubic-bezier(0.22, 1, 0.36, 1);
 }
 
-.js .hero.is-intro-visible {
+.js .hero.is-intro-visible .hero-intro-item {
   opacity: 1;
   transform: translateY(0);
 }
 
+.js .hero-intro-item.hero-intro-delay-1 {
+  transition-delay: 90ms;
+}
+
+.js .hero-intro-item.hero-intro-delay-2 {
+  transition-delay: 180ms;
+}
+
+.js .hero-intro-item.hero-intro-delay-3 {
+  transition-delay: 270ms;
+}
+
+.js .hero-intro-item.hero-intro-delay-4 {
+  transition-delay: 360ms;
+}
+
 @media (prefers-reduced-motion: reduce) {
-  .js .hero {
+  .js .hero-intro-item {
     opacity: 1;
     transform: none;
     transition: none;
@@ -2822,7 +2839,6 @@ html {
   color: rgba(255, 255, 255, 0.82);
 }
 
-.contact-page .contact-status-card,
 .contact-page .contact-panel,
 .contact-page .contact-card,
 .contact-page .assistant-card,
@@ -2833,7 +2849,6 @@ html {
   background: rgba(255, 255, 255, 0.045);
 }
 
-.contact-page .contact-status-label,
 .contact-page .contact-label,
 .contact-page .contact-status-kicker,
 .contact-page .page-kicker {
@@ -4429,8 +4444,7 @@ li {
 
 .contact-page .page-kicker,
 .contact-page .contact-label,
-.contact-page .contact-status-kicker,
-.contact-page .contact-status-label {
+.contact-page .contact-status-kicker {
   color: var(--color-accent);
 }
 
