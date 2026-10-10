@@ -5887,3 +5887,81 @@ li {
   margin-top: 0;
 }
 
+
+/* --- Maßnahme 4 (M1): Jede Link- und Bedienzeile hat mindestens
+   44 px Trefferfläche. Unterstreichungen laufen über text-decoration,
+   damit sie nah am Text bleiben, obwohl die Fläche höher wird. */
+:root {
+  --tap-target: 44px;
+}
+
+.text-link {
+  display: inline-block;
+  min-height: var(--tap-target);
+  margin-top: 10px;
+  padding-block: calc((var(--tap-target) - 1.4em) / 2);
+  line-height: 1.4;
+  border-bottom: 0;
+  text-decoration: underline;
+  text-decoration-color: var(--color-accent-line);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 6px;
+}
+
+.text-link:hover {
+  text-decoration-color: var(--color-accent);
+}
+
+.text-link::after {
+  display: inline-block;
+  margin-left: 8px;
+}
+
+.home-workflow .text-link:hover {
+  text-decoration-color: var(--color-accent-soft);
+}
+
+.site-brand,
+.site-nav a,
+.home-contact-phone-number,
+.legal-content .index-link,
+.faq-jump-links a,
+.toc-list a,
+.filter-pill {
+  min-height: var(--tap-target);
+}
+
+.site-brand {
+  align-content: center;
+}
+
+.site-nav a,
+.home-contact-phone-number,
+.legal-content .index-link,
+.faq-jump-links a,
+.toc-list a,
+.filter-pill {
+  display: inline-flex;
+  align-items: center;
+}
+
+.site-nav a {
+  padding-block: 0;
+}
+
+.legal-content .index li + li {
+  margin-top: 0;
+}
+
+.footer-contact-list,
+.footer-link-group {
+  gap: 0;
+}
+
+.footer-contact-list a,
+.footer-link-group a {
+  display: flex;
+  align-items: center;
+  width: fit-content;
+  min-height: var(--tap-target);
+}
