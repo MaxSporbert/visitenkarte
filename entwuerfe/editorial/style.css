@@ -400,23 +400,24 @@ p { margin: 0; text-wrap: pretty; }
   * { transition: none !important; }
 }
 
-/* Papierstruktur: feines Korn über der ganzen Seite, wie Druckpapier.
-   Als SVG-Rauschen eingebettet, keine Bilddatei; Klicks gehen hindurch. */
+/* Papierstruktur wie Aquarell-/Büttenpapier: eine unebene Oberfläche,
+   seitlich beleuchtet (Prägung aus Licht und Schatten, kein Farbkorn).
+   Als SVG-Lichtfilter eingebettet, keine Bilddatei; Klicks gehen hindurch. */
 body::before {
   position: fixed;
   inset: 0;
   z-index: 1000;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='260' height='260'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0.35 0 0 0 0 0.28 0 0 0 0 0.18 0 0 0 0.55 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
-  opacity: 0.34;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='320' height='320'%3E%3Cfilter id='p' x='0' y='0' width='100%25' height='100%25'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.24' numOctaves='4' seed='7' stitchTiles='stitch' result='n'/%3E%3CfeDiffuseLighting in='n' surfaceScale='1.7' diffuseConstant='1' lighting-color='%23ffffff'%3E%3CfeDistantLight azimuth='225' elevation='52'/%3E%3C/feDiffuseLighting%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23p)'/%3E%3C/svg%3E");
+  opacity: 0.18;
   mix-blend-mode: multiply;
   content: "";
   pointer-events: none;
 }
 
-/* Etwas wärmerer Papierton passend zur Struktur */
+/* Neutraler, fast weißer Papierton wie in der Referenz */
 :root {
-  --paper: #faf8f2;
-  --paper-deep: #f1ede3;
+  --paper: #fdfdfc;
+  --paper-deep: #f3f3f1;
 }
 
 @media print {
