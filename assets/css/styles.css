@@ -6739,3 +6739,46 @@ li {
   text-decoration-color: var(--color-accent-soft);
   text-underline-offset: 4px;
 }
+
+/* --- Maßnahme 13 (N5): Einstiegskarten mit deutlicheren Icons, lesbarem
+   Kartentext und der ganzen Karte als Trefferfläche. */
+.home-audience .home-nav-card {
+  position: relative;
+  transition: background-color 180ms ease;
+}
+
+.home-audience .home-nav-card .section-icon {
+  width: 32px;
+  height: 32px;
+  color: var(--color-accent);
+}
+
+.home-audience .home-nav-card p:not(.page-kicker) {
+  font-size: var(--text-md);
+  line-height: 1.6;
+}
+
+.home-audience .home-nav-card .text-link::before {
+  position: absolute;
+  inset: 0;
+  content: "";
+}
+
+.home-audience .home-nav-card:hover {
+  background: var(--color-stone-100);
+  color: inherit;
+}
+
+.home-audience .home-nav-card:hover .text-link {
+  color: var(--color-accent);
+  text-decoration-color: var(--color-accent);
+}
+
+.home-audience .home-nav-card:focus-within {
+  outline: 2px solid var(--color-accent);
+  outline-offset: -2px;
+}
+
+.home-audience .home-nav-card .text-link:focus-visible {
+  outline: 0;
+}
