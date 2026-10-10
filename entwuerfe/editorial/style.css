@@ -119,7 +119,7 @@ body::before {
 .label::before { flex: 0 0 36px; height: 1px; background: var(--brass-line); content: ""; }
 .numeral { display: block; color: var(--brass); font-family: var(--serif); font-size: 1.5rem; font-style: italic; line-height: 1; }
 
-.link { display: inline-block; padding-block: 10px; color: var(--ink); font-weight: 500; line-height: 1.4; text-decoration: underline; text-decoration-color: var(--brass-line); text-decoration-thickness: 1px; text-underline-offset: 6px; }
+.link { display: inline-block; padding-block: 10px; color: var(--ink); font-weight: 500; line-height: 1.4; text-decoration: underline; text-decoration-color: var(--underline); text-decoration-thickness: 1px; text-underline-offset: 6px; }
 .link::after { display: inline-block; margin-left: 10px; content: "→"; transition: transform 0.25s ease; }
 .link:hover { color: var(--accent); }
 .link:hover::after { transform: translateX(4px); }
@@ -215,7 +215,7 @@ a.card:hover h3 { color: var(--accent); }
 .contact-line + .contact-line { margin-top: var(--s4); }
 .contact-line span { color: var(--ink-soft); font-size: var(--t-xs); letter-spacing: 0.14em; text-transform: uppercase; }
 .contact-line a, .contact-line strong { font-family: var(--serif); font-size: var(--t-xl); font-weight: 500; line-height: 1.25; overflow-wrap: anywhere; }
-.contact-line a { width: fit-content; text-decoration: underline; text-decoration-color: var(--brass-line); text-decoration-thickness: 1px; text-underline-offset: 6px; }
+.contact-line a { width: fit-content; text-decoration: underline; text-decoration-color: var(--underline); text-decoration-thickness: 1px; text-underline-offset: 6px; }
 .contact-line a:hover { color: var(--accent); }
 
 /* ---------- Footer ---------- */
@@ -436,3 +436,19 @@ a.card:hover h3 { color: var(--accent); }
 .split .ill { max-width: 477px; }
 .split .col-b > .ill { margin-left: auto; }
 .figure .ill { max-width: 640px; }
+
+/* Unterstreichungen systemweit in Tinte statt Gold */
+:root { --underline: rgba(24, 36, 48, 0.32); }
+.link, .contact-line a { text-decoration-color: var(--underline); }
+.link:hover, .contact-line a:hover { text-decoration-color: currentColor; }
+.nav a[aria-current]::after { background: var(--ink); }
+
+/* Hero über die volle Breite: Überschrift über alle 12 Spalten,
+   Einleitung und Aktionen rechts als Gegengewicht. */
+.hero .label { grid-column: 1 / -1; }
+.hero h1 { grid-column: 1 / -1; font-size: clamp(3.25rem, 1.6rem + 6.4vw, 8.5rem); }
+.hero-foot { grid-column: 7 / span 6; margin-top: var(--s5); }
+
+@media (max-width: 960px) {
+  .hero-foot { grid-column: 1 / -1 !important; margin-top: var(--s4); }
+}
