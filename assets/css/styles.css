@@ -429,3 +429,5 @@ aside.note > p + p { margin-top: 0.5em; }
 .reach-box .label { margin-bottom: var(--s2); }
 .flow > .contact-line + .btn, .flow > .contact-line + .link { margin-top: var(--s3); }
 .flow > .btn { justify-self: start; }
+h1, h2, h3, .collapse-toggle { hyphens: auto; overflow-wrap: break-word; }
+.collapse-toggle { display: grid; grid-template-columns: minmax(0, 1fr) auto; }
