@@ -346,3 +346,58 @@ a.card:hover h3 { color: var(--accent); }
   .masthead-meta { font-size: 0.75rem; }
   .masthead-meta a { display: none; }
 }
+
+/* =====================================================================
+   Stimmigkeit (Überarbeitung): ein Papier, eine Tinte, leise Akzente.
+   - Keine dunklen Flächen; alle Abschnitte liegen auf Büttenpapier.
+   - Akzentfarbe nur als Linie oder Kursive, nie als Fläche.
+   - Buttons als Kontur, nicht gefüllt.
+   ===================================================================== */
+:root {
+  --accent: #3d5a73;      /* gedämpftes Tintenblau statt kräftigem Blau */
+}
+
+/* Hero rein typografisch */
+.hero h1 { grid-column: 1 / span 10; }
+.hero h1 em, .contact h2 em { color: var(--ink-soft); font-weight: 400; }
+.hero-foot { grid-column: 1 / span 7; }
+
+/* Button: Kontur in Tinte, ruhig */
+.btn { border: 1px solid var(--ink); background: transparent; color: var(--ink); }
+.btn:hover { border-color: var(--ink); background: var(--paper-deep); color: var(--ink); }
+
+/* Leitgedanke auf Papier zwischen zwei Linien */
+.quote { background: transparent; color: var(--ink); }
+.quote .wrap { padding-block: var(--s5); border-top: 1px solid var(--rule-strong); border-bottom: 1px solid var(--rule-strong); }
+.quote-mark { color: var(--brass); font-size: 2.5rem; }
+.quote blockquote { max-width: 22ch; font-size: clamp(2rem, 1.3rem + 2.6vw, 3.75rem); }
+.quote blockquote span { color: var(--ink-soft); }
+.quote cite { color: var(--ink-soft); }
+
+/* Footer auf Papier statt Navy */
+.footer { border-top: 1px solid var(--rule-strong); background: var(--paper-deep); color: var(--ink-soft); }
+.footer .grid { border-bottom-color: var(--rule); }
+.footer .wordmark-name { color: var(--ink); }
+.footer .wordmark-sub, .footer h4 { color: var(--brass); }
+.footer a:hover { color: var(--ink); }
+.footer :focus-visible { outline-color: var(--accent); }
+
+/* Karte im gleichen Farbklang */
+.region-map .river { stroke: #b9c3c9; }
+.region-map .riv { fill: var(--ink-soft); }
+.region-map .office { fill: var(--brass-line); }
+
+/* Zeichnungen: Tönung einheitlich warmgrau */
+.ill .f-tint, .region-map .area { fill: #ebe9e3; }
+.region-map .area { stroke: #ebe9e3; }
+
+/* Entwurfsleiste zurückhaltend */
+.draft-bar { background: var(--paper-deep); color: var(--ink-soft); border-bottom: 1px solid var(--rule); }
+.draft-bar a { color: var(--ink); }
+
+@media (max-width: 960px) {
+  .hero h1, .hero-foot, .opener-text { grid-column: 1 / -1 !important; }
+}
+
+.section.quote, .section.quote + .section { border-top: 0; }
+.section.quote { padding-block: var(--s5); }
