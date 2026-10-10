@@ -6245,3 +6245,108 @@ li {
     padding: 22px 0;
   }
 }
+
+/* --- Maßnahme 8 (N6, N7): Leistungsüberblick mit gleich aufgebauten
+   Karten (Aktionen unten bündig, ein Button plus Textlink), sichtbare
+   Ziffern; Abgrenzung mit Link im Block und den drei Grenzen rechts. */
+.home-summary .service-card {
+  min-height: 0;
+}
+
+.home-summary .service-card[data-editorial-number]::before {
+  margin: 0 0 20px;
+  color: var(--color-accent);
+  font-family: var(--font-serif);
+  font-size: 2.25rem;
+  line-height: 1;
+}
+
+.home-summary .service-card-actions {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px 24px;
+  margin-top: auto;
+  padding-top: 28px;
+}
+
+.home-summary .service-card .service-card-actions .button {
+  flex: 0 0 auto;
+  width: auto;
+  padding-inline: 18px;
+}
+
+.home-summary .service-card-actions .text-link {
+  margin-top: 0;
+}
+
+.home-boundary {
+  grid-template-columns: minmax(0, 1.25fr) minmax(260px, 0.75fr);
+  align-items: center;
+}
+
+.home-boundary .section-heading .text-link {
+  width: fit-content;
+  margin-top: -8px;
+}
+
+.home-boundary-list {
+  display: grid;
+  gap: 0;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.home-boundary-list li {
+  display: grid;
+  gap: 4px;
+  padding: 18px 0 18px 36px;
+  border-top: 1px solid var(--color-line);
+  position: relative;
+}
+
+.home-boundary-list li:last-child {
+  border-bottom: 1px solid var(--color-line);
+}
+
+.home-boundary-list li::before {
+  position: absolute;
+  top: 19px;
+  left: 0;
+  display: grid;
+  place-items: center;
+  width: 22px;
+  height: 22px;
+  border: 1px solid var(--color-negative);
+  border-radius: 50%;
+  color: var(--color-negative);
+  content: "–";
+  font-size: var(--text-sm);
+  line-height: 1;
+}
+
+.home-boundary-list strong {
+  color: var(--color-ink);
+  font-size: var(--text-md);
+  font-weight: 600;
+}
+
+.home-boundary-list span {
+  color: var(--color-ink-soft);
+  font-size: var(--text-sm);
+  line-height: 1.55;
+}
+
+@media (max-width: 860px) {
+  .home-boundary {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (min-width: 861px) {
+  .home-boundary > .section-heading-wide {
+    grid-column: 1;
+  }
+}

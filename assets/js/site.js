@@ -121,7 +121,7 @@ const revealGroupsByPage = {
   "index.html": [
     { selector: '.home-situation[aria-labelledby="start-zielgruppen"] .task-card', stagger: true },
     { selector: ".home-summary .service-card", stagger: true },
-    { selector: '.home-situation[aria-labelledby="start-abgrenzung"] > *', stagger: true },
+    { selector: '.home-situation[aria-labelledby="start-abgrenzung"] > *, .home-boundary-list li', stagger: true },
     { selector: ".home-workflow .principle", stagger: true },
     { selector: ".home-region-copy, .home-region-map", stagger: true, fadeOnly: true },
     { selector: ".home-contact-heading" },

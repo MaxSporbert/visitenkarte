@@ -61,6 +61,12 @@ def main() -> int:
           errors.append(f"{html_file.name}: missing target {match}")
         elif resolved.suffix == ".html":
           internal_html_targets.add(resolved.name)
+          fragment = match.split("#", 1)[1] if "#" in match else ""
+          if fragment and f'id="{fragment}"' not in resolved.read_text(encoding="utf-8"):
+            errors.append(f"{html_file.name}: missing anchor {match}")
+      for fragment in re.findall(r'href="#([^"]+)"', content):
+        if f'id="{fragment}"' not in content:
+          errors.append(f"{html_file.name}: missing anchor #{fragment}")
 
       if "github.io" in content:
         errors.append(f"{html_file.name}: contains a GitHub Pages URL")
