@@ -1,3 +1,9 @@
+// Abwesenheiten (jeweils einschließlich). Bei neuer Urlaubsmeldung hier
+// und in den Hinweisboxen auf Startseite und Kontaktseite pflegen.
+const ABSENCES = [
+  ["2026-11-02", "2026-11-06"],
+];
+
 function updateAvailability() {
   const now = new Date();
 
@@ -13,8 +19,15 @@ function updateAvailability() {
   const start = 10 * 60;
   const end = 12 * 60;
 
+  const isoDate = [
+    berlinTime.getFullYear(),
+    String(berlinTime.getMonth() + 1).padStart(2, "0"),
+    String(berlinTime.getDate()).padStart(2, "0"),
+  ].join("-");
+  const absence = ABSENCES.find(([from, to]) => isoDate >= from && isoDate <= to);
+
   const isWeekday = day >= 1 && day <= 5;
-  const isAvailable = isWeekday && currentMinutes >= start && currentMinutes < end;
+  const isAvailable = !absence && isWeekday && currentMinutes >= start && currentMinutes < end;
 
   let message;
   let color;
@@ -49,6 +62,27 @@ function updateAvailability() {
     dot.style.boxShadow = "0 0 0 4px " + glow;
     status.style.background = background;
     status.style.borderColor = border;
+  });
+
+  document.querySelectorAll("[data-header-availability]").forEach((link) => {
+    const text = link.querySelector("[data-header-availability-text]");
+    const dot = link.querySelector("[data-header-availability-dot]");
+
+    if (text) {
+      if (isAvailable) {
+        text.textContent = "Jetzt telefonisch erreichbar";
+      } else if (absence) {
+        const [, month, dayOfMonth] = absence[1].split("-");
+        text.textContent = `Urlaub bis ${dayOfMonth}.${month}. · E-Mail möglich`;
+      } else {
+        text.textContent = "Telefon Mo–Fr 10–12 Uhr";
+      }
+    }
+    if (dot) {
+      dot.style.background = color;
+      dot.style.boxShadow = "0 0 0 4px " + glow;
+    }
+    link.dataset.state = isAvailable ? "open" : "closed";
   });
 
   const contactAvailabilityCards = document.querySelectorAll("[data-contact-availability]");
