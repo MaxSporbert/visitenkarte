@@ -421,3 +421,6 @@ a.card:hover h3 { color: var(--accent); }
 .article-head .head-note { grid-column: 1 / span 7; margin-top: var(--s4); }
 aside.note > p + p { margin-top: 0.5em; }
 @media (max-width: 960px) { .article-head .head-note { grid-column: 1 / -1; } }
+.refs + .cards { margin-top: var(--s5); }
+.chapter:first-child { padding-top: var(--s5); }
+.chapter + .chapter .qa-group:first-child { margin-top: 0; }
