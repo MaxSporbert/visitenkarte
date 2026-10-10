@@ -416,3 +416,8 @@ a.card:hover h3 { color: var(--accent); }
 .note-spaced { margin-top: var(--s4); }
 .defs-numbers dd strong { color: var(--ink); font-family: var(--serif); font-size: var(--t-lg); font-weight: 500; }
 .body-text + .defs, .body-text + .list, p + .defs { margin-top: var(--s4); }
+
+.pull-first { margin: 0 0 var(--s4); }
+.article-head .head-note { grid-column: 1 / span 7; margin-top: var(--s4); }
+aside.note > p + p { margin-top: 0.5em; }
+@media (max-width: 960px) { .article-head .head-note { grid-column: 1 / -1; } }
