@@ -359,12 +359,12 @@ a.card:hover h3 { color: var(--accent); }
   .item .ill { width: 56px; height: 56px; }
   .notice .wrap { display: grid; }
 
-  .mobile-action-bar { position: fixed; right: 0; bottom: 0; left: 0; z-index: 55; display: grid; grid-template-columns: 1fr 1fr; border-top: 1px solid var(--rule-strong); background: rgba(243, 243, 241, 0.72); -webkit-backdrop-filter: blur(10px); backdrop-filter: blur(10px); }
+  .mobile-action-bar { position: fixed; right: 0; bottom: 0; left: 0; z-index: 55; display: grid; grid-template-columns: 1fr 1fr; border-top: 1px solid var(--rule-strong); background: rgba(243, 243, 241, 0.5); -webkit-backdrop-filter: blur(2px); backdrop-filter: blur(2px); }
   .mobile-action { display: grid; place-content: center; min-height: 60px; padding: var(--s1); color: var(--ink); font-size: var(--t-sm); font-weight: 500; line-height: 1.25; text-align: center; text-decoration: none; }
   .mobile-action + .mobile-action { border-left: 1px solid var(--rule); }
   .mobile-action small { color: var(--ink-soft); font-size: var(--t-xs); font-weight: 400; }
   body { padding-bottom: calc(60px + env(safe-area-inset-bottom, 0px)); }
-  .back-to-top { background: rgba(253, 253, 252, 0.72); border-color: rgba(24, 36, 48, 0.55); -webkit-backdrop-filter: blur(10px); backdrop-filter: blur(10px); right: 12px; bottom: calc(72px + env(safe-area-inset-bottom, 0px)); width: var(--tap); padding: 0; justify-content: center; }
+  .back-to-top { background: rgba(253, 253, 252, 0.5); border-color: rgba(24, 36, 48, 0.55); -webkit-backdrop-filter: blur(2px); backdrop-filter: blur(2px); right: 12px; bottom: calc(72px + env(safe-area-inset-bottom, 0px)); width: var(--tap); padding: 0; justify-content: center; }
   .back-to-top-text { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
 }
 
