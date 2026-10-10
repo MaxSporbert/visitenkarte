@@ -452,3 +452,22 @@ a.card:hover h3 { color: var(--accent); }
 @media (max-width: 960px) {
   .hero-foot { grid-column: 1 / -1 !important; margin-top: var(--s4); }
 }
+
+/* Hero als Titelblatt: eine gemeinsame Mittelachse mit Kopfzeile und
+   Leitgedanke. Überschrift, Trennlinie, Einleitung und Aktionen stehen
+   zentriert untereinander; keine versetzten Blöcke. */
+.hero { padding-block: var(--section); text-align: center; }
+.hero .grid { display: block; }
+.hero .label { justify-content: center; margin-bottom: var(--s4); }
+.hero .label::after { flex: 0 0 36px; height: 1px; background: var(--brass-line); content: ""; }
+.hero h1 { max-width: 15ch; margin-inline: auto; font-size: clamp(3.25rem, 1.6rem + 6vw, 8rem); line-height: 0.96; }
+.hero-foot { display: grid; justify-items: center; gap: var(--s4); max-width: 36rem; margin: var(--s5) auto 0; padding-top: var(--s5); border-top: 1px solid var(--rule-strong); }
+.hero-foot.flow > * + * { margin-top: 0; }
+.hero-actions { justify-content: center; }
+
+@media (max-width: 720px) {
+  .hero .label::before, .hero .label::after { display: none; }
+  .hero .label { letter-spacing: 0.16em; }
+  .meta-mail { display: none; }
+  .hero-actions { flex-direction: column; gap: var(--s2); }
+}
