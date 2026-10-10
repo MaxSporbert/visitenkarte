@@ -198,7 +198,7 @@ const backToTop = document.createElement("button");
 backToTop.type = "button";
 backToTop.className = "back-to-top";
 backToTop.hidden = true;
-backToTop.innerHTML = '<span aria-hidden="true">↑</span><span>Nach oben</span>';
+backToTop.innerHTML = '<svg class="back-to-top-icon" viewBox="0 0 16 16" width="16" height="16" aria-hidden="true" focusable="false"><path d="M8 13V3M3.5 7.5 8 3l4.5 4.5" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="back-to-top-text">Nach oben</span>';
 document.body.append(backToTop);
 let ticking = false;
 const updateBackToTop = () => {
