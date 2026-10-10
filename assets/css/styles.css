@@ -5752,7 +5752,6 @@ li {
    Auf dunklen Flächen würde der dunklere Akzent als Fokusrahmen nur
    knapp 3 : 1 erreichen; dort trägt der helle Akzent den Rahmen. */
 .hero :focus-visible,
-.home-contact :focus-visible,
 .site-footer :focus-visible,
 .mobile-action-bar :focus-visible {
   outline-color: var(--color-accent-soft) !important;
@@ -5811,3 +5810,80 @@ li {
 .contact-page .short-answer p:not(.page-kicker) {
   max-width: 36em;
 }
+
+/* --- Maßnahme 3 (N1): Kontaktabschnitt hell und klar vom dunklen
+   Footer getrennt; eine Primäraktion (E-Mail), Telefon als tel:-Link,
+   weiterführende Ziele als Textlinks. */
+.home-contact {
+  align-items: center;
+  border-top: 3px solid var(--color-accent);
+  background: var(--color-stone-100);
+  color: var(--color-ink);
+}
+
+.home-contact .page-kicker {
+  color: var(--color-accent);
+}
+
+.home-contact h2 {
+  color: var(--color-ink);
+}
+
+.home-contact-copy p:last-child {
+  color: var(--color-ink-soft);
+}
+
+.home-contact-actions {
+  display: grid;
+  gap: 22px;
+  width: min(100%, 24rem);
+  margin: 0;
+}
+
+.home-contact-actions .button {
+  width: 100%;
+}
+
+.home-contact-phone {
+  display: grid;
+  gap: 2px;
+  margin: 0;
+  padding: 14px 0 14px 18px;
+  border-left: 3px solid var(--color-accent-line);
+}
+
+.home-contact-phone-label {
+  color: var(--color-ink-soft);
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+
+.home-contact-phone-number {
+  width: fit-content;
+  color: var(--color-ink);
+  font-size: 1.25rem;
+  font-weight: 600;
+  font-variant-numeric: lining-nums tabular-nums;
+  line-height: 1.4;
+  text-decoration: underline;
+  text-decoration-color: var(--color-accent-line);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 5px;
+}
+
+.home-contact-phone-number:hover {
+  color: var(--color-accent);
+  text-decoration-color: var(--color-accent);
+}
+
+.home-contact-more {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0 24px;
+  margin: 0;
+}
+
+.home-contact-more .text-link {
+  margin-top: 0;
+}
+
