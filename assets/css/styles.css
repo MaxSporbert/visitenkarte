@@ -414,3 +414,5 @@ a.card:hover h3 { color: var(--accent); }
 @media (max-width: 960px) { .head-ill .portrait { margin-left: 0; max-width: 300px; } }
 .list-spaced { margin-top: var(--s3); }
 .note-spaced { margin-top: var(--s4); }
+.defs-numbers dd strong { color: var(--ink); font-family: var(--serif); font-size: var(--t-lg); font-weight: 500; }
+.body-text + .defs, .body-text + .list, p + .defs { margin-top: var(--s4); }
