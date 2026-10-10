@@ -6623,3 +6623,15 @@ li {
     grid-column: 1;
   }
 }
+
+/* --- Maßnahme 10 (N3, M5): Offenes Menü liegt klar über dem Inhalt;
+   der abgedunkelte Hintergrund schließt es per Klick. */
+@media (max-width: 860px) {
+  .is-menu-open::before {
+    position: fixed;
+    inset: 0;
+    z-index: 58;
+    background: rgba(14, 34, 53, 0.42);
+    content: "";
+  }
+}

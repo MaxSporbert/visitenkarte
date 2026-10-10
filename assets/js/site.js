@@ -17,16 +17,48 @@ const menuButton = document.querySelector("[data-menu-toggle]");
 const siteNavigation = document.querySelector("[data-site-nav]");
 
 if (menuButton && siteNavigation) {
-  menuButton.addEventListener("click", () => {
-    const isOpen = menuButton.getAttribute("aria-expanded") === "true";
-    menuButton.setAttribute("aria-expanded", String(!isOpen));
-    siteNavigation.dataset.open = String(!isOpen);
-  });
+  const isMenuOpen = () => menuButton.getAttribute("aria-expanded") === "true";
+
+  const setMenuOpen = (open, { returnFocus = false } = {}) => {
+    menuButton.setAttribute("aria-expanded", String(open));
+    siteNavigation.dataset.open = String(open);
+    document.body.classList.toggle("is-menu-open", open);
+    if (!open && returnFocus) {
+      menuButton.focus();
+    }
+  };
+
+  menuButton.addEventListener("click", () => setMenuOpen(!isMenuOpen()));
 
   siteNavigation.addEventListener("click", (event) => {
     if (event.target.closest("a")) {
-      menuButton.setAttribute("aria-expanded", "false");
-      siteNavigation.dataset.open = "false";
+      setMenuOpen(false);
+    }
+  });
+
+  // Schließen per Escape und per Klick außerhalb; der Fokus kehrt zum
+  // Menü-Button zurück, wenn er im Menü lag.
+  document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape" && isMenuOpen()) {
+      setMenuOpen(false, { returnFocus: true });
+    }
+  });
+
+  document.addEventListener("click", (event) => {
+    if (isMenuOpen() && !siteNavigation.contains(event.target) && !menuButton.contains(event.target)) {
+      setMenuOpen(false);
+    }
+  });
+
+  siteNavigation.addEventListener("focusout", (event) => {
+    if (isMenuOpen() && event.relatedTarget && !siteNavigation.contains(event.relatedTarget) && event.relatedTarget !== menuButton) {
+      setMenuOpen(false);
+    }
+  });
+
+  window.matchMedia("(min-width: 861px)").addEventListener("change", (event) => {
+    if (event.matches) {
+      setMenuOpen(false);
     }
   });
 }
