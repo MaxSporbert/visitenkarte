@@ -308,6 +308,9 @@ if (sectionNavRoot) {
   const ownIndex = sectionNavRoot.querySelector("[data-own-index]");
   if (ownIndex && ownIndex.id) {
     sections.forEach((section) => {
+      if (!(ownIndex.compareDocumentPosition(section.heading) & Node.DOCUMENT_POSITION_FOLLOWING)) {
+        return;
+      }
       const back = document.createElement("p");
       back.className = "section-back";
       back.innerHTML = `<a class="text-link" href="#${ownIndex.id}">Zur Inhaltsübersicht</a>`;

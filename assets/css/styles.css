@@ -6930,3 +6930,67 @@ li {
     font-size: 20px;
   }
 }
+
+/* --- Maßnahme 15 (U7): Sichtbare Brotkrumen über der H1
+   (gleiche Quelle wie die BreadcrumbList der Strukturdaten). */
+.breadcrumb {
+  margin: 0 0 8px;
+}
+
+.breadcrumb ol {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  color: var(--color-ink-soft);
+  font-size: var(--text-sm);
+}
+
+.breadcrumb li {
+  display: inline-flex;
+  align-items: center;
+}
+
+.breadcrumb li + li::before {
+  margin: 0 10px;
+  color: var(--color-ink-soft);
+  content: "›";
+}
+
+.breadcrumb a {
+  display: inline-flex;
+  align-items: center;
+  min-height: var(--tap-target);
+  color: var(--color-ink-soft);
+  text-decoration: underline;
+  text-decoration-color: var(--color-line-strong);
+  text-underline-offset: 4px;
+}
+
+.breadcrumb a:hover {
+  color: var(--color-accent);
+  text-decoration-color: var(--color-accent);
+}
+
+.breadcrumb [aria-current] {
+  color: var(--color-ink);
+  font-weight: 500;
+}
+
+.legal-page > .breadcrumb {
+  max-width: 860px;
+  margin-inline: auto;
+}
+
+@media (max-width: 720px) {
+  .breadcrumb li + li::before {
+    margin: 0 6px;
+  }
+
+  .breadcrumb a,
+  .breadcrumb [aria-current] {
+    letter-spacing: -0.005em;
+  }
+}
