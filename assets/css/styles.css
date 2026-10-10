@@ -6635,3 +6635,82 @@ li {
     content: "";
   }
 }
+
+/* --- Maßnahme 11 (U4, U5): Kontaktseite mit zwei Kartentypen.
+   Standard: 1 px Rahmen, keine Schatten. Hervorgehoben: zusätzlich
+   Akzentlinie oben (Abwesenheit, E-Mail, Telefon). */
+.contact-page .contact-panel,
+.contact-page .contact-card,
+.contact-page .contact-secondary .contact-panel,
+.contact-page .contact-secondary .contact-card,
+.contact-page .contact-direct .contact-primary:first-child,
+.contact-page .contact-direct .contact-primary:last-child,
+.contact-page .short-answer,
+.contact-page > .editorial-availability-notice,
+.contact-status-card {
+  border: 1px solid var(--contact-card-border);
+  border-radius: var(--radius);
+  background: var(--contact-card-surface);
+  box-shadow: none;
+}
+
+.contact-page .contact-direct .contact-primary:first-child,
+.contact-page .contact-direct .contact-primary:last-child,
+.contact-page > .editorial-availability-notice {
+  border-top: 3px solid var(--color-accent);
+}
+
+.contact-direct {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.contact-page .contact-direct .contact-primary:last-child .button {
+  border-color: var(--color-navy-900);
+  background: var(--color-navy-900);
+  color: var(--color-white);
+}
+
+.contact-page .contact-direct .contact-primary:last-child .button:hover {
+  border-color: var(--color-accent);
+  background: var(--color-accent);
+}
+
+.contact-page .notice-card {
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  border-radius: var(--radius);
+  box-shadow: none;
+}
+
+@media (max-width: 860px) {
+  .contact-direct {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Abwesenheitsmeldung: Zeitraum hervorgehoben, Folgezeile in Inter,
+   auf Startseite und Kontaktseite gleich gesetzt. */
+.editorial-availability-copy h2 time {
+  font-variant-numeric: lining-nums;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.home-page > .home-availability-notice {
+  border-top: 3px solid var(--color-accent);
+}
+
+.editorial-availability-copy p:not(.page-kicker),
+.home-page > .home-availability-notice .editorial-availability-copy p:not(.page-kicker) {
+  margin-top: 10px;
+  color: var(--color-ink-soft);
+  font-family: var(--font-sans);
+  font-size: var(--text-md);
+  line-height: 1.6;
+}
+
+.editorial-availability-copy a {
+  border-bottom: 0;
+  text-decoration: underline;
+  text-decoration-color: var(--color-accent-line);
+  text-underline-offset: 4px;
+}
