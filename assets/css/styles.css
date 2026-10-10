@@ -385,3 +385,23 @@ a.card:hover h3 { color: var(--accent); }
 .link { line-height: 24px; }
 .masthead-meta a { display: inline-flex; align-items: center; min-height: var(--tap); }
 .contact-line a { padding-block: 4px; }
+
+/* Abgleich mit der Startseite: Seitentitel wie Titel der Startseite,
+   Zitate im Text in Kartentitelgröße. */
+:root { --t-title: clamp(3.25rem, 1.6rem + 6vw, 8rem); }
+.hero h1, .article-head h1 { font-size: var(--t-title); line-height: 0.96; }
+.pull { font-size: var(--t-xl); line-height: 1.25; }
+
+/* Randspalten im Artikel liegen auf dem 12-Spalten-Raster:
+   Hauptspalte = 8 Spalten; Text 5 + Rand 3 bzw. Text 4 + Rand 4. */
+.aside-pair, .aside-pair.wide { grid-template-columns: repeat(8, minmax(0, 1fr)); column-gap: var(--gap); }
+.aside-pair > :first-child { grid-column: 1 / span 5; }
+.aside-pair > :last-child { grid-column: 6 / span 3; }
+.aside-pair.wide > :first-child { grid-column: 1 / span 4; }
+.aside-pair.wide > :last-child { grid-column: 5 / span 4; }
+.article-head .head-ill { grid-column: 9 / span 4; justify-self: stretch; max-width: none; }
+@media (max-width: 960px) {
+  .aside-pair, .aside-pair.wide { grid-template-columns: 1fr; }
+  .aside-pair > :first-child, .aside-pair > :last-child, .aside-pair.wide > :first-child, .aside-pair.wide > :last-child { grid-column: 1; }
+  .article-head .head-ill { grid-column: 1 / -1; max-width: 440px; }
+}
