@@ -6714,3 +6714,28 @@ li {
   text-decoration-color: var(--color-accent-line);
   text-underline-offset: 4px;
 }
+
+/* --- Maßnahme 12 (N4): Hero-Leiste mit gut sichtbaren Ziffern und
+   lesbaren Untertiteln; jeder Eintrag führt zu seinem eigenen Ziel. */
+.hero-baseline-num {
+  color: var(--color-accent-soft);
+}
+
+.hero-baseline-sub {
+  color: rgba(255, 255, 255, 0.74);
+  font-size: var(--text-sm);
+}
+
+.hero-baseline-item {
+  min-height: var(--tap-target);
+}
+
+.hero-baseline-item:hover {
+  opacity: 1;
+}
+
+.hero-baseline-item:hover .hero-baseline-title {
+  text-decoration: underline;
+  text-decoration-color: var(--color-accent-soft);
+  text-underline-offset: 4px;
+}
