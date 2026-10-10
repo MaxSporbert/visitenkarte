@@ -46,7 +46,7 @@ body::before { position: fixed; inset: 0; z-index: 1000; background-image: url("
 .masthead-main { display: grid; grid-template-columns: 1fr auto 1fr; align-items: center; min-height: 112px; }
 .wordmark { grid-column: 2; text-align: center; text-decoration: none; }
 .wordmark-name { display: block; font-family: var(--serif); font-size: 2.25rem; font-weight: 500; letter-spacing: 0.01em; line-height: 1; }
-.wordmark-sub { display: block; margin-top: 10px; color: var(--brass); font-size: 0.6875rem; font-weight: 600; letter-spacing: 0.32em; text-transform: uppercase; }
+.wordmark-sub { display: block; margin-top: 10px; color: var(--brass); font-size: var(--t-xs); font-weight: 600; letter-spacing: 0.24em; text-transform: uppercase; }
 .masthead-cta { grid-column: 3; justify-self: end; }
 .menu-toggle { display: none; }
 .site-nav { border-top: 1px solid var(--rule); }
@@ -176,7 +176,7 @@ a.card:hover h3 { color: var(--accent); }
 .site-footer .grid { padding-bottom: var(--s5); border-bottom: 1px solid var(--rule); }
 .site-footer .wordmark-name { color: var(--ink); font-size: 2rem; }
 .footer-text { margin-top: var(--s3); max-width: 28em; }
-.site-footer h2 { margin-bottom: var(--s2); color: var(--brass); font-family: var(--sans); font-size: 0.6875rem; font-weight: 600; letter-spacing: 0.24em; text-transform: uppercase; }
+.site-footer h2 { margin-bottom: var(--s2); color: var(--brass); font-family: var(--sans); font-size: var(--t-xs); font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; }
 .site-footer ul { padding: 0; list-style: none; }
 .site-footer li a { display: inline-flex; align-items: center; min-height: var(--tap); text-decoration: none; overflow-wrap: anywhere; }
 .site-footer a:hover { color: var(--ink); }
@@ -431,3 +431,16 @@ aside.note > p + p { margin-top: 0.5em; }
 .flow > .btn { justify-self: start; }
 h1, h2, h3, .collapse-toggle { hyphens: auto; overflow-wrap: break-word; }
 .collapse-toggle { display: grid; grid-template-columns: minmax(0, 1fr) auto; }
+
+.visually-hidden { font-size: var(--t-xs); position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+
+/* Artikel mobil: Kapitel aufklappbar (Kopf = Ziffer + Titel) */
+@media (max-width: 720px) {
+  [data-collapse="chapters"] .chapter { padding-top: var(--s3); }
+  [data-collapse="chapters"] .chapter + .chapter { margin-top: 0; }
+  [data-collapse="chapters"] .chapter > h2 { margin-bottom: 0; font-size: var(--t-xl); }
+  [data-collapse="chapters"] .chapter > .numeral { margin-bottom: var(--s1); }
+  [data-collapse="chapters"] .chapter > [hidden="until-found"] { display: block; content-visibility: hidden; height: 0; margin: 0 !important; padding: 0 !important; border: 0 !important; overflow: hidden; }
+  [data-collapse="chapters"] .chapter > h2 + :not([hidden]) { margin-top: var(--s3); }
+  [data-collapse="chapters"] .chapter:last-child { padding-bottom: var(--s3); }
+}

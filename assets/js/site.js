@@ -114,7 +114,11 @@ const collapsible = document.querySelector("[data-collapse]");
 const compact = window.matchMedia("(max-width: 720px)");
 if (collapsible) {
   const hiddenValue = "onbeforematch" in document.body ? "until-found" : "";
-  const sections = Array.from(collapsible.querySelectorAll(":scope > h2[id]")).map((heading) => {
+  const byChapter = collapsible.dataset.collapse === "chapters";
+  const headings = byChapter
+    ? Array.from(collapsible.querySelectorAll(":scope > .chapter > h2")).filter((h) => h.parentElement.id !== "weiter")
+    : Array.from(collapsible.querySelectorAll(":scope > h2[id]"));
+  const sections = headings.map((heading) => {
     const items = [];
     let next = heading.nextElementSibling;
     while (next && next.tagName !== "H2") {
@@ -165,7 +169,7 @@ if (collapsible) {
   });
 
   const openFor = (target) => {
-    const section = target && sections.find((entry) => entry.heading === target || entry.items.some((item) => item.contains(target)));
+    const section = target && sections.find((entry) => entry.heading === target || entry.heading.parentElement === target || entry.items.some((item) => item.contains(target)));
     if (section && section.button) {
       setOpen(section, true);
     }
