@@ -6110,3 +6110,48 @@ li {
     padding-inline: 14px;
   }
 }
+
+/* --- Maßnahme 6 (U1, U2): FAQ mit einer Bedienleiste (Suche plus
+   Themenfilter) und kräftiger gesetzten Fragen. */
+.faq-tools-more {
+  margin: 0;
+}
+
+.faq-tools-more .text-link {
+  margin-top: 0;
+}
+
+.faq-list summary {
+  font-family: var(--font-sans);
+  font-size: 1.0625rem;
+  font-weight: 600;
+  line-height: 1.45;
+}
+
+.faq-list summary::after {
+  right: 20px;
+  display: grid;
+  place-items: center;
+  width: 28px;
+  height: 28px;
+  border: 1px solid var(--color-accent-line);
+  border-radius: 50%;
+  color: var(--color-accent);
+  font-size: 1.25rem;
+  font-weight: 500;
+  line-height: 1;
+}
+
+.faq-list details[open] summary::after {
+  border-color: var(--color-accent);
+}
+
+@media (max-width: 720px) {
+  .faq-list summary {
+    font-size: 1rem;
+  }
+
+  .faq-list summary::after {
+    right: 14px;
+  }
+}

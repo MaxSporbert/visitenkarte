@@ -63,20 +63,30 @@ if (faqSearch && faqFilters.length && faqItems.length && faqStatus && faqCategor
     });
 
     faqStatus.textContent = visibleCount > 0
-      ? `${visibleCount} Frage${visibleCount === 1 ? "" : "n"} werden angezeigt.`
+      ? `${visibleCount} ${visibleCount === 1 ? "Frage wird" : "Fragen werden"} angezeigt.`
       : "Keine Frage passt zu dieser Auswahl.";
   };
 
-  faqFilters.forEach((button) => {
-    button.addEventListener("click", () => {
-      activeCategory = button.dataset.faqFilter || "alle";
-      faqFilters.forEach((item) => item.classList.toggle("is-active", item === button));
-      applyFaqFilter();
+  const setFaqCategory = (category) => {
+    activeCategory = category;
+    faqFilters.forEach((item) => {
+      const isActive = (item.dataset.faqFilter || "alle") === category;
+      item.classList.toggle("is-active", isActive);
+      item.setAttribute("aria-pressed", String(isActive));
     });
+    applyFaqFilter();
+  };
+
+  faqFilters.forEach((button) => {
+    button.addEventListener("click", () => setFaqCategory(button.dataset.faqFilter || "alle"));
   });
 
   faqSearch.addEventListener("input", applyFaqFilter);
-  applyFaqFilter();
+
+  // Frühere Sprungmarken (#faq-betreuung usw.) wählen den passenden Filter.
+  const hashCategory = window.location.hash.replace(/^#faq-/, "");
+  const hasHashFilter = Array.from(faqFilters).some((item) => item.dataset.faqFilter === hashCategory);
+  setFaqCategory(hasHashFilter ? hashCategory : "alle");
 }
 
 const glossarySearch = document.querySelector("[data-glossary-search]");
@@ -98,7 +108,7 @@ if (glossarySearch && glossaryItems.length && glossaryStatus) {
     });
 
     glossaryStatus.textContent = visibleCount > 0
-      ? `${visibleCount} Begriff${visibleCount === 1 ? "" : "e"} werden angezeigt.`
+      ? `${visibleCount} ${visibleCount === 1 ? "Begriff wird" : "Begriffe werden"} angezeigt.`
       : "Kein Begriff passt zu dieser Suche.";
   };
 
