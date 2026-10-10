@@ -401,3 +401,38 @@ a.card:hover h3 { color: var(--accent); }
 
 .section.quote, .section.quote + .section { border-top: 0; }
 .section.quote { padding-block: var(--s5); }
+
+/* =====================================================================
+   Größenregel für Illustrationen (systemweit)
+   - Jede Illustration füllt die Breite ihrer Spalte bzw. Karte.
+   - Linien bleiben dabei immer 1,25 px (nicht mitskaliert).
+   - Kartenmotive stehen auf einer gemeinsamen Bühne 360 × 200 mit
+     durchgehender Grundlinie; alle Karten einer Reihe sind gleich hoch.
+   - Kleine Motive in Listen: einheitlich 72 px.
+   ===================================================================== */
+.ill path, .ill rect, .ill circle, .ill line { vector-effect: non-scaling-stroke; }
+
+.split .ill,
+.aside-pair .ill,
+.figure .ill,
+.sights .ill,
+.article-head .head-ill .ill,
+.card .ill-stage { width: 100%; height: auto; max-width: none; }
+
+.article-head .head-ill { width: 100%; max-width: 440px; }
+.card .ill-stage { margin-bottom: var(--s2); }
+.split .col-a > .ill, .split .col-b > .ill { display: block; }
+.region-map svg { max-width: none; }
+
+.item { grid-template-columns: 72px 1fr; }
+.item .ill { width: 72px; height: 72px; }
+
+@media (max-width: 960px) {
+  .split .ill, .aside-pair .ill { max-width: 520px; }
+}
+
+/* Zweiteilige Abschnitte: Illustrationen beider Seiten gleich breit
+   (Breite der 5-Spalten-Seite), Schaubilder im Artikel bis 640 px. */
+.split .ill { max-width: 477px; }
+.split .col-b > .ill { margin-left: auto; }
+.figure .ill { max-width: 640px; }
