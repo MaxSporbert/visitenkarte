@@ -76,7 +76,11 @@
   --color-stone-200: #dfe3df;
   --color-ink: #182430;
   --color-ink-soft: #4a5560;
-  --color-accent: #3f7ea6;
+  /* Akzent für Text, Links und Button-Flächen: 5,2 : 1 auf Papier,
+     4,75 : 1 auf Stone, 5,4 : 1 mit weißem Text. */
+  --color-accent: #356f96;
+  /* Hellere Variante nur für Flächen, Linien und Dekor. */
+  --color-accent-bright: #3f7ea6;
   --color-accent-soft: #a9c6d8;
   --color-warning: #9b6514;
   --color-negative: #804640;
