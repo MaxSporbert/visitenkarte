@@ -412,3 +412,4 @@ a.card:hover h3 { color: var(--accent); }
 
 .head-ill .portrait { max-width: 377px; margin-left: auto; }
 @media (max-width: 960px) { .head-ill .portrait { margin-left: 0; max-width: 300px; } }
+.list-spaced { margin-top: var(--s3); }
