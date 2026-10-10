@@ -6782,3 +6782,151 @@ li {
 .home-audience .home-nav-card .text-link:focus-visible {
   outline: 0;
 }
+
+/* --- Maßnahme 14 (N9): Regionskarte als lagegetreuer Ausschnitt mit
+   benannten Orten statt Deutschlandkarte. */
+.home-region-map {
+  aspect-ratio: auto;
+  overflow: visible;
+  transform: none;
+}
+
+.home-region-map::after {
+  display: none;
+}
+
+.region-map {
+  display: block;
+  width: 100%;
+  height: auto;
+  border: 1px solid var(--color-line);
+  border-radius: var(--radius);
+  background: var(--color-paper);
+  font-family: var(--font-sans);
+}
+
+.region-map-area {
+  fill: #dce7ee;
+  stroke: #dce7ee;
+  stroke-width: 64;
+  stroke-linejoin: round;
+}
+
+.region-map-area-label {
+  fill: var(--color-accent);
+  font-family: var(--font-serif);
+  font-size: 22px;
+  font-style: italic;
+  letter-spacing: 0.01em;
+}
+
+.region-map-river {
+  fill: none;
+  stroke: #8fb3cb;
+  stroke-width: 2.5;
+  stroke-linecap: round;
+}
+
+.region-map-river-label {
+  fill: #5d86a3;
+  font-family: var(--font-serif);
+  font-size: 16px;
+  font-style: italic;
+}
+
+.region-map-town {
+  fill: var(--color-navy-900);
+  stroke: var(--color-white);
+  stroke-width: 2.5;
+}
+
+.region-map-town-label {
+  fill: var(--color-ink);
+  font-size: 19px;
+  font-weight: 600;
+  paint-order: stroke;
+  stroke: var(--color-paper);
+  stroke-width: 5px;
+  stroke-linejoin: round;
+}
+
+.region-map-town-label-small {
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.region-map-office {
+  fill: var(--color-accent);
+  stroke: var(--color-white);
+  stroke-width: 2.5;
+}
+
+.region-map-office-label {
+  fill: var(--color-accent);
+  font-size: 16px;
+  font-weight: 600;
+  paint-order: stroke;
+  stroke: var(--color-paper);
+  stroke-width: 5px;
+  stroke-linejoin: round;
+}
+
+.region-map-orient {
+  fill: var(--color-white);
+  stroke: var(--color-ink-soft);
+  stroke-width: 1.5;
+}
+
+.region-map-orient-label {
+  fill: var(--color-ink-soft);
+  font-size: 16px;
+}
+
+.region-map-scale {
+  fill: none;
+  stroke: var(--color-ink-soft);
+  stroke-width: 1.5;
+}
+
+.region-map-scale-label {
+  fill: var(--color-ink-soft);
+  font-size: 14px;
+}
+
+.home-region-map figcaption {
+  margin-top: 10px;
+  color: var(--color-ink-soft);
+  font-size: var(--text-xs);
+  line-height: 1.5;
+}
+
+@media (max-width: 720px) {
+  .home-region-map {
+    width: 100%;
+    margin-left: 0;
+  }
+}
+
+@media (max-width: 720px) {
+  .region-map-town-label {
+    font-size: 25px;
+  }
+
+  .region-map-town-label-small,
+  .region-map-office-label,
+  .region-map-orient-label {
+    font-size: 21px;
+  }
+
+  .region-map-river-label {
+    font-size: 20px;
+  }
+
+  .region-map-area-label {
+    font-size: 26px;
+  }
+
+  .region-map-scale-label {
+    font-size: 20px;
+  }
+}
