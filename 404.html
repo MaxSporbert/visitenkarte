@@ -1,6 +1,7 @@
 <!doctype html>
 <html lang="de">
 <head>
+
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>404 | Seite nicht gefunden</title>
@@ -13,89 +14,88 @@
   <link rel="icon" href="/assets/favicon/android-chrome-512x512.png?v=20260713-2" type="image/png" sizes="512x512">
   <link rel="shortcut icon" href="/assets/favicon/favicon.ico?v=20260713-2" type="image/x-icon">
   <link rel="apple-touch-icon" href="/assets/favicon/apple-touch-icon.png?v=20260713-2" sizes="180x180">
-  <link rel="stylesheet" href="assets/css/variables.css?v=20261010-site-52">
-  <link rel="stylesheet" href="assets/css/styles.css?v=20261010-site-52">
-  <script src="assets/js/site.js?v=20261010-site-52" defer></script>
+  <link rel="stylesheet" href="/assets/css/variables.css?v=20261011-site-60">
+  <link rel="stylesheet" href="/assets/css/styles.css?v=20261011-site-60">
+  <script src="/assets/js/site.js?v=20261011-site-60" defer></script>
 </head>
-
 <body>
   <a class="skip-link" href="#hauptinhalt">Zum Hauptinhalt</a>
-  <header class="site-header">
-    <a class="site-brand" href="index.html" aria-label="Betreuungsbüro – Startseite">
-      <span class="site-brand-name">Maximilian Sporbert</span>
-      <span class="site-brand-label">Betreuungsbüro</span>
-    </a>
-
-    <div class="header-actions">
-      <a class="header-availability-link" href="kontakt.html#sprechzeiten" data-header-availability><span class="header-availability-dot" data-header-availability-dot aria-hidden="true"></span><span data-header-availability-text>Telefon Mo–Fr 10–12 Uhr</span></a>
-      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="hauptnavigation" data-menu-toggle><span class="menu-icon" aria-hidden="true"></span><span class="menu-toggle-label">Menü</span></button>
-      <nav class="site-nav" id="hauptnavigation" aria-label="Hauptnavigation" data-site-nav data-open="false"><a href="index.html">Startseite</a><a href="ueber-mich.html">Über mich</a><a href="leistungen.html">Leistungen</a><a href="fuer-betroffene-und-angehoerige.html">Für Betroffene &amp; Angehörige</a><a href="faq.html">FAQ</a><a class="nav-cta" href="kontakt.html">Kontakt</a></nav>
+  <header class="masthead">
+    <div class="wrap masthead-meta">
+      <span>Rechtliche Betreuung · Verfahrenspflegschaft · Burgenlandkreis &amp; Gera</span>
+      <span><a class="status" href="/kontakt.html#erreichbarkeit" data-header-availability><span class="status-dot" data-header-availability-dot aria-hidden="true"></span><span data-header-availability-text>Telefon Mo–Fr 10–12 Uhr</span></a><span class="meta-mail"> &nbsp;·&nbsp; <a href="mailto:kontakt@buero-betreuung.de">kontakt@buero-betreuung.de</a></span></span>
     </div>
+    <div class="wrap masthead-main">
+      <a class="wordmark" href="/index.html" aria-label="Maximilian Sporbert, Betreuungsbüro – Startseite"><span class="wordmark-name">Maximilian Sporbert</span><span class="wordmark-sub">Betreuungsbüro</span></a>
+      <a class="masthead-cta link" href="/kontakt.html">Kontakt</a>
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="hauptnavigation" data-menu-toggle>Menü</button>
+    </div>
+    <nav class="site-nav" id="hauptnavigation" aria-label="Hauptnavigation" data-site-nav data-open="false">
+      <ul class="wrap"><li><a href="/index.html">Startseite</a></li><li><a href="/ueber-mich.html">Über mich</a></li><li><a href="/leistungen.html">Leistungen</a></li><li><a href="/fuer-betroffene-und-angehoerige.html">Für Betroffene &amp; Angehörige</a></li><li><a href="/faq.html">FAQ</a></li><li><a href="/kontakt.html">Kontakt</a></li></ul>
+    </nav>
   </header>
 
-  <main class="stage" id="hauptinhalt">
-    <article class="page-card not-found-page">
-      <p class="page-kicker">404</p>
-      <h1 class="page-title">Diese Seite wurde nicht gefunden.</h1>
-      <p class="page-lead">Möglicherweise ist der Link veraltet oder die Seite wurde verschoben. Über die folgenden Einstiege gelangen Sie zurück zu den wichtigsten Bereichen.</p>
-      <div class="button-row">
-        <a class="button button-primary" href="index.html">Zur Startseite</a>
-        <a class="button button-secondary" href="leistungen.html">Zu den Leistungen</a>
-        <a class="button button-secondary" href="kontakt.html">Kontakt aufnehmen</a>
+  <main id="hauptinhalt">
+    <section class="hero" aria-labelledby="titel">
+      <div class="wrap">
+        <p class="label">Fehler 404</p>
+        <h1 id="titel">Diese Seite wurde <em>nicht gefunden.</em></h1>
+        <div class="hero-foot"><p class="lead">Möglicherweise ist der Link veraltet oder die Seite wurde verschoben. Über die folgenden Einstiege gelangen Sie zurück zu den wichtigsten Bereichen.</p></div>
       </div>
-      <p class="contact-note">Kontakt: <a href="mailto:kontakt@buero-betreuung.de">kontakt@buero-betreuung.de</a> · <a href="tel:+4917641233015">+49 176 41233015</a></p>
-    </article>
+    </section>
+    <section class="section" aria-labelledby="einstiege">
+      <div class="wrap"><h2 class="visually-hidden" id="einstiege">Einstiege</h2><div class="cards"><a class="card card-3" href="/index.html"><h3>Startseite</h3><p>Überblick über das Betreuungsbüro.</p><span class="link">Weiterlesen</span></a><a class="card card-3" href="/leistungen.html"><h3>Leistungen</h3><p>Rechtliche Betreuung und Verfahrenspflegschaft.</p><span class="link">Weiterlesen</span></a><a class="card card-3" href="/kontakt.html"><h3>Kontakt</h3><p>E-Mail, Telefon und Sprechzeiten.</p><span class="link">Weiterlesen</span></a></div>
+      </div>
+    </section>
   </main>
 
-  <nav class="mobile-action-bar" aria-label="Schnellkontakt">
-    <a class="mobile-action" href="tel:+4917641233015">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-      <span class="mobile-action-text">Anrufen<small>nur Mo–Fr 10–12 Uhr</small></span>
-    </a>
-    <a class="mobile-action" href="mailto:kontakt@buero-betreuung.de">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2.5" y="4.5" width="19" height="15" rx="2"/><path d="m3 6 9 7 9-7"/></svg>
-      <span class="mobile-action-text">E-Mail<small>jederzeit</small></span>
-    </a>
-  </nav>
   <footer class="site-footer">
-    <div class="footer-grid">
-      <div class="footer-column footer-column-identity">
-        <p class="footer-title">Maximilian Sporbert</p>
-        <p class="footer-stack"><span>Betreuungsbüro</span><span>06722 Wetterzeube</span></p>
-        <p class="footer-heading">Kontakt</p>
-        <div class="footer-contact-list">
-          <a href="mailto:kontakt@buero-betreuung.de">kontakt@buero-betreuung.de</a>
-          <a href="tel:+4917641233015">+49 176 41233015</a>
+    <div class="wrap">
+      <div class="grid">
+        <div class="col-f0">
+          <span class="wordmark-name">Maximilian Sporbert</span>
+          <span class="wordmark-sub">Betreuungsbüro · 06722 Wetterzeube</span>
+          <p class="footer-text">Rechtliche Betreuung und Verfahrenspflegschaft nach gerichtlicher Bestellung im Burgenlandkreis, in Gera und Umland.</p>
         </div>
+        <nav class="col-f1" aria-labelledby="footer-inhalte">
+          <h2 id="footer-inhalte">Inhalte</h2>
+          <ul>
+            <li><a href="/ueber-mich.html">Über mich</a></li>
+            <li><a href="/leistungen.html">Leistungen</a></li>
+            <li><a href="/rechtliche-betreuung.html">Rechtliche Betreuung</a></li>
+            <li><a href="/verfahrenspflegschaft.html">Verfahrenspflegschaft</a></li>
+            <li><a href="/was-ist-betreuung-und-was-nicht.html">Was ist Betreuung – und was nicht?</a></li>
+            <li><a href="/ablauf-nach-bestellung.html">Ablauf nach Bestellung</a></li>
+          </ul>
+        </nav>
+        <nav class="col-f2" aria-labelledby="footer-orientierung">
+          <h2 id="footer-orientierung">Orientierung</h2>
+          <ul>
+            <li><a href="/fuer-betroffene-und-angehoerige.html">Für Betroffene &amp; Angehörige</a></li>
+            <li><a href="/fuer-behoerden-und-einrichtungen.html">Für Behörden &amp; Einrichtungen</a></li>
+            <li><a href="/faq.html">FAQ</a></li>
+            <li><a href="/begriffe.html">Begriffe kurz erklärt</a></li>
+            <li><a href="/fachliche-einordnung.html">Fachliche Einordnung</a></li>
+          </ul>
+        </nav>
+        <nav class="col-f3" aria-labelledby="footer-kontakt">
+          <h2 id="footer-kontakt">Kontakt</h2>
+          <ul>
+            <li><a href="/kontakt.html">Kontakt</a></li>
+            <li><a href="mailto:kontakt@buero-betreuung.de">E-Mail</a></li>
+            <li><a href="tel:+4917641233015">Telefon</a></li>
+            <li><a href="/impressum.html">Impressum</a></li>
+            <li><a href="/datenschutz.html">Datenschutz</a></li>
+          </ul>
+        </nav>
       </div>
-      <nav class="footer-column" aria-labelledby="footer-inhalte">
-        <p class="footer-heading" id="footer-inhalte">Inhalte</p>
-        <div class="footer-link-group">
-          <a href="index.html">Startseite</a>
-          <a href="ueber-mich.html">Über mich</a>
-          <a href="leistungen.html">Leistungen</a>
-          <a href="rechtliche-betreuung.html">Rechtliche Betreuung</a>
-          <a href="was-ist-betreuung-und-was-nicht.html">Was ist Betreuung – und was nicht?</a>
-          <a href="verfahrenspflegschaft.html">Verfahrenspflegschaft</a>
-          <a href="ablauf-nach-bestellung.html">Ablauf nach Bestellung</a>
-          <a href="fuer-behoerden-und-einrichtungen.html">Für Behörden &amp; Einrichtungen</a>
-        </div>
-      </nav>
-      <nav class="footer-column" aria-labelledby="footer-service">
-        <p class="footer-heading" id="footer-service">Orientierung</p>
-        <div class="footer-link-group">
-          <a href="fuer-betroffene-und-angehoerige.html">Für Betroffene &amp; Angehörige</a>
-          <a href="faq.html">FAQ</a>
-          <a href="begriffe.html">Begriffe kurz erklärt</a>
-          <a href="fachliche-einordnung.html">Fachliche Einordnung</a>
-          <a href="kontakt.html">Kontakt</a>
-          <a href="impressum.html">Impressum</a>
-          <a href="datenschutz.html">Datenschutz</a>
-        </div>
-      </nav>
+      <div class="footer-meta"><span>© Maximilian Sporbert · Betreuungsbüro</span><span>06722 Wetterzeube</span></div>
     </div>
-    <div class="footer-meta">© Maximilian Sporbert · Betreuungsbüro</div>
   </footer>
-  <script src="assets/js/availability.js?v=20261010-site-52"></script>
+  <nav class="mobile-action-bar" aria-label="Schnellkontakt">
+    <a class="mobile-action" href="tel:+4917641233015">Anrufen<small>nur Mo–Fr 10–12 Uhr</small></a>
+    <a class="mobile-action" href="mailto:kontakt@buero-betreuung.de">E-Mail<small>jederzeit</small></a>
+  </nav>
+  <script src="/assets/js/availability.js?v=20261011-site-60"></script>
 </body>
 </html>
