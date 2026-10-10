@@ -102,9 +102,23 @@
   --text-h1: clamp(2.375rem, 1.7rem + 2.8vw, 3.75rem);
   --text-h2: clamp(1.75rem, 1.4rem + 1.5vw, 2.375rem);
   --text-h3: 1.375rem;
-  --text-body: 1rem;
-  --text-small: 0.875rem;
-  --text-eyebrow: 0.9375rem;
+
+  /* Textskala in fünf Stufen (bei 17 px Grundgröße): 13 / 15 / 17 / 20 / 24 px.
+     Größere Werte sind Überschriften und Display-Größen. */
+  --text-xs: calc(13 / 17 * 1rem);
+  --text-sm: calc(15 / 17 * 1rem);
+  --text-md: 1rem;
+  --text-lg: calc(20 / 17 * 1rem);
+  --text-xl: calc(24 / 17 * 1rem);
+
+  --text-body: var(--text-md);
+  --text-small: var(--text-sm);
+  --text-eyebrow: var(--text-sm);
+
+  /* Schriftschnitte: nur geladene Gewichte verwenden. */
+  --weight-regular: 400;
+  --weight-medium: 500;
+  --weight-semibold: 600;
 
   /* Abstände */
   --space-3xs: 4px;
@@ -116,6 +130,10 @@
   --space-xl: 64px;
   --space-2xl: 96px;
   --space-3xl: 128px;
+
+  /* Abschnittsrhythmus: Standard und kompakt (mobil kleiner, siehe unten). */
+  --section-space: 96px;
+  --section-space-compact: 64px;
 
   --container: 1180px;
   --container-wide: 1440px;
@@ -129,4 +147,11 @@
 
   /* Übergänge */
   --transition-fast: 0.2s ease;
+}
+
+@media (max-width: 720px) {
+  :root {
+    --section-space: 64px;
+    --section-space-compact: 48px;
+  }
 }
