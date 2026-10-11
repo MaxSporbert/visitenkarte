@@ -20,6 +20,10 @@
   --brass: #8a6a35;           /* Etiketten und Ziffern (4,8 : 1 auf Papier) */
   --brass-line: #b8955a;      /* nur Linien und Zeichnungen */
   --tint: #ebe9e3;            /* Tönung in Zeichnungen */
+  --pastel-blue: #dfe7ee;     /* Pastelltöne nur in Illustrationen */
+  --pastel-sage: #e1e9dd;
+  --pastel-rose: #f2e3dc;
+  --pastel-sand: #f3ead8;
   --rule: rgba(24, 36, 48, 0.14);
   --rule-strong: rgba(24, 36, 48, 0.3);
   --underline: rgba(24, 36, 48, 0.32);
