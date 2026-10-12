@@ -272,7 +272,7 @@ a.card:hover h3 { color: var(--accent); }
 
 /* Hinweis zur Abwesenheit: eine Zeile zwischen zwei Linien */
 .notice { border-bottom: 1px solid var(--rule); }
-.notice .wrap { display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px var(--s3); padding-block: var(--s3); }
+.notice .wrap { display: grid; gap: 4px; padding-block: var(--s3); }
 .notice h2 { font-size: var(--t-lg); line-height: 1.35; }
 .notice h2 time { font-weight: 600; white-space: nowrap; }
 .notice p { color: var(--ink-soft); font-size: var(--t-sm); }
