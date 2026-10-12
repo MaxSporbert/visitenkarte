@@ -271,11 +271,13 @@ a.card:hover h3 { color: var(--accent); }
 .refs { display: flex; flex-wrap: wrap; gap: 0 var(--s4); margin-top: var(--s3); }
 
 /* Hinweis zur Abwesenheit: eine Zeile zwischen zwei Linien */
-.notice { border-bottom: 1px solid var(--rule); }
-.notice .wrap { display: grid; gap: 4px; padding-block: var(--s3); }
-.notice h2 { font-size: var(--t-lg); line-height: 1.35; }
-.notice h2 time { font-weight: 600; white-space: nowrap; }
-.notice p { color: var(--ink-soft); font-size: var(--t-sm); }
+.notice .notice-title { text-wrap: balance; color: var(--ink); font-family: var(--serif); font-size: var(--t-md); line-height: 1.4; }
+.notice .notice-title time { font-weight: 600; white-space: nowrap; }
+.notice .notice-title + p { margin-top: 4px; color: var(--ink-soft); font-size: var(--t-sm); }
+.notice-hero { margin-top: var(--s4); }
+.notice-hero .notice-title { font-size: var(--t-lg); }
+.notice-hero::before { display: block; width: 36px; height: 1px; margin: 0 auto var(--s3); background: var(--brass-line); content: ""; }
+.notice-aside { margin-top: var(--s3); padding-left: var(--s2); border-left: 1px solid var(--brass-line); }
 
 /* Rechtstexte */
 .legal h2 { margin: var(--s5) 0 var(--s3); padding-top: var(--s4); border-top: 1px solid var(--rule); font-size: var(--t-xl); line-height: 1.15; scroll-margin-top: var(--s3); }
@@ -367,7 +369,6 @@ a.card:hover h3 { color: var(--accent); }
   .roman li, .steps li { grid-template-columns: 48px 1fr; column-gap: var(--s2); }
   .item { grid-template-columns: 56px 1fr; column-gap: var(--s2); }
   .item .ill { width: 56px; height: 56px; }
-  .notice .wrap { display: grid; }
 
   .mobile-action-bar { position: fixed; right: 0; bottom: 0; left: 0; z-index: 55; display: grid; grid-template-columns: 1fr 1fr; border-top: 1px solid var(--rule-strong); background: rgba(243, 243, 241, 0.5); -webkit-backdrop-filter: blur(2px); backdrop-filter: blur(2px); }
   .mobile-action { display: grid; place-content: center; min-height: 60px; padding: var(--s1); color: var(--ink); font-size: var(--t-sm); font-weight: 500; line-height: 1.25; text-align: center; text-decoration: none; }
