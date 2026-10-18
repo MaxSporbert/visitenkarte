@@ -1,7 +1,7 @@
 // Abwesenheiten (jeweils einschließlich). Bei neuer Urlaubsmeldung hier
 // und in den Hinweisboxen auf Startseite und Kontaktseite pflegen.
 const ABSENCES = [
-  ["2026-11-03", "2026-11-06"],
+  ["2026-11-02", "2026-11-06"],
 ];
 
 function updateAvailability() {
